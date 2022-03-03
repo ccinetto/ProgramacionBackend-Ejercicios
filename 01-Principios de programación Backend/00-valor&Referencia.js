@@ -1,11 +1,11 @@
-let nombre = 'pepe';
+// let nombre = 'pepe';
 
-nombre2 = nombre;
+// nombre2 = nombre;
 
-nombre = 'juan';
+// nombre = 'juan';
 
-console.log(nombre2);
-console.log(nombre);
+// console.log(nombre2);
+// console.log(nombre);
 
 const fruta = {
   nombre: 'banana',

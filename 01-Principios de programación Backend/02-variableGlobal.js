@@ -1,7 +1,7 @@
 let i = 'hola!, soy la variable global';
 
 function foo() {
-  console.log(i);
+  console.log('dentro de la funcion', i);
 }
 
 console.log(i);

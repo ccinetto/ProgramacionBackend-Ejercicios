@@ -1,4 +1,4 @@
-let nombre = 'pepe';
+const nombre = 'pepe';
 let edad = 28;
 let precio = 99.99;
 const seriesFavoritas = ['Dark', 'Breaking Bad', 'How i met your mother'];

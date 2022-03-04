@@ -11,7 +11,7 @@ function explainLet() {
 explainLet();
 
 function explainHoistingLet() {
-  let a = 20;
+  let a = 20; //Probar comentando y descomentando esta linea
   console.log(a);
   a = 10;
   console.log(a);

@@ -5,6 +5,5 @@ function foo() {
   console.log(i);
 }
 
-console.log(i);
 foo();
 console.log(i);

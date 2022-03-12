@@ -1,0 +1,15 @@
+{
+	"contenidoStr": "{\"name\":\"ejemplo\",\"version\":\"1.0.0\",\"description\":\"\",\"main\":\"00-repaso.js\",\"scripts\":{\"test\":\"echo \\\"Error: no test specified\\\" && exit 1\"},\"author\":\"CoderHouse\",\"license\":\"ISC\"}",
+	"contenidoObj": {
+		"name": "ejemplo",
+		"version": "1.0.0",
+		"description": "",
+		"main": "00-repaso.js",
+		"scripts": {
+			"test": "echo \"Error: no test specified\" && exit 1"
+		},
+		"author": "CoderHouse",
+		"license": "ISC"
+	},
+	"size": 207
+}

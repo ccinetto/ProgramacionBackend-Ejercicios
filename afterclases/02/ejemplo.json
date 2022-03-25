@@ -1,0 +1,22 @@
+[
+	{
+		"id": 6,
+		"nombre": "escuadra",
+		"precio": 200
+	},
+	{
+		"id": 7,
+		"nombre": "lapicera",
+		"precio": 200
+	},
+	{
+		"id": 22,
+		"nombre": "boligoma",
+		"precio": 10
+	},
+	{
+		"id": 23,
+		"nombre": "Camiseta",
+		"precio": 400
+	}
+]

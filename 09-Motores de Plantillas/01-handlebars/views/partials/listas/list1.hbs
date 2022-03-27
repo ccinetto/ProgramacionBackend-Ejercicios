@@ -1,0 +1,12 @@
+{{#if listaSuper.length}}
+<p>Lista de supermercado de {{nombre}} {{apellido}}</p>
+<ul>
+  {{#each listaSuper}}
+  <li>{{this}}</li>
+  {{/each}}
+
+  {{#each listaObjetos}}
+  <li class={{this.style}}>{{this.name}}</li>
+  {{/each}}
+</ul>
+{{/if}}

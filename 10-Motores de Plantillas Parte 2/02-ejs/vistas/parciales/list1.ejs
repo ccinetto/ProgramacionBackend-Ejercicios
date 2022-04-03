@@ -1,0 +1,14 @@
+<div>
+  <h1>Lista Super</h1>
+  <% if(mostrarLista) { %>
+    <ul>
+      <% listaSuper.forEach(anItem=> { %>
+        <li>
+          <%= anItem %>
+        </li>
+        <% }) %>
+    </ul>
+    <% } else { %>
+      <p>No te muestro nada</p>
+      <% } %>
+</div>

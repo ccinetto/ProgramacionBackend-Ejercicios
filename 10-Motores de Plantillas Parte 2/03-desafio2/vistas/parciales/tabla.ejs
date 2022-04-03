@@ -1,0 +1,24 @@
+<table style="width:50%">
+  <tr>
+    <th id="id">ID</th>
+    <th id="nombreHeader">Nombre</th>
+    <th id="apellidoHeader">Apellido</th>
+    <th id="edadHeader"> Edad</th>
+  </tr>
+  <% personas.forEach(anItem=> { %>
+    <tr>
+      <td>
+        <%= anItem.id %>
+      </td>
+      <td>
+        <%= anItem.nombre %>
+      </td>
+      <td>
+        <%= anItem.apellido %>
+      </td>
+      <td>
+        <%= anItem.edad %>
+      </td>
+    </tr>
+    <% }) %>
+</table>

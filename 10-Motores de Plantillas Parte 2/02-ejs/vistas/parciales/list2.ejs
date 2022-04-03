@@ -1,0 +1,13 @@
+<div>
+  <h1>Lista Cosas a Hacer</h1>
+  <ul>
+    <% listaTodos.forEach(anItem=> { %>
+      <li class="<%=anItem.style%>">
+        <%= anItem.nombre %>
+      </li>
+      <% }) %>
+  </ul>
+
+  <meter min="<%= minimo %>"> </meter>
+
+</div>

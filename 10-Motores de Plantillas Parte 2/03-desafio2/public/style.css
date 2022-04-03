@@ -1,0 +1,20 @@
+/*estilo para todos los tags li*/
+li {
+  width: 500px;
+  margin: 4px;
+  padding: 4px;
+  /* list-style: none */
+}
+
+td {
+  border: 1px solid #000;
+}
+
+tr td:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+/*estilos personalizados*/
+.midlaner {background-color: #eeeeee}
+.toplaner {background-color: #ffea00}

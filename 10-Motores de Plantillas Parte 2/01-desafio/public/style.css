@@ -1,0 +1,22 @@
+/*estilo para todos los tags li*/
+li {
+  width: 500px;
+  margin: 4px;
+  padding: 4px;
+  /* list-style: none */
+}
+
+
+#meter {
+  width: 50%;
+  height: 60px;
+}
+
+.leyenda {
+display: inline;
+font-size:30px
+}
+
+/*estilos personalizados*/
+.midlaner {background-color: #eeeeee}
+.toplaner {background-color: #ffea00}

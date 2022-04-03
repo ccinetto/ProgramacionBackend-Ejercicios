@@ -1,0 +1,10 @@
+html 
+  head 
+    title desafio
+    link(rel="stylesheet" href="style.css")
+  body
+    h1(id="miTag" class="toplaner")=titulo
+    div(id="parent")
+        p(class='leyenda')=min
+        meter(id="meter" min=min max=max value=nivel)=mensaje
+        p(class='leyenda')=max

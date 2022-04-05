@@ -1,0 +1,11 @@
+html
+  head 
+    meta(charset="UTF-8")
+    title='My Aplicación con Sockets'
+    script(src="/socket.io/socket.io.js")
+    script(src="main.js")
+  body 
+    h1='My App'
+    input(type="text" name="name" id="pepe")
+    button(onclick="sendData(this)")="ENVIAR"
+    div(id="messages")

@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 app.get('/eje2', (req, res) => {
   const data = {
-    titulo: 'titulo dinamico',
+    titulo: 'HOLA CODER',
     mensaje: 'Mi Mensaje dinamico con estilo',
   };
   res.render('ejemplo2', data);
@@ -32,7 +32,7 @@ app.get('/eje3', (req, res) => {
     titulo: 'titulo dinamico',
     mensaje: 'Mi Mensaje dinamico con estilo',
     listaSuper: ['mate', 'cafe', 'harina', 'palmitos'],
-    mostrarLista: true,
+    mostrarLista: false,
     numero : 11
   }
   res.render('ejemplo3', data);

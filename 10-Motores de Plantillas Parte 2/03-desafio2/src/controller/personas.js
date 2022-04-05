@@ -1,22 +1,25 @@
 const { v4: uuidv4 } = require('uuid');
 
-let personas = [];
+class Personas {
+  constructor() {
+    this.personas = [];
+  }
 
-const getAll = () => {
-  return personas;
-};
+  getAll() {
+    return this.personas;
+  }
 
-const save = (data) => {
-  const nuevaPersona = {
-    id: uuidv4(),
-    nombre: data.nombre,
-    apellido: data.apellido,
-    edad: data.edad,
-  };
-  personas.push(nuevaPersona);
-};
-
-module.exports = {
-    getAll,
-    save,
+  save(data) {
+    const nuevaPersona = {
+      id: uuidv4(),
+      nombre: data.nombre,
+      apellido: data.apellido,
+      edad: data.edad,
+    };
+    this.personas.push(nuevaPersona);
+  }
 }
+
+const personasController = new Personas();
+
+module.exports = personasController

@@ -16,7 +16,7 @@ const viewsPath = path.resolve(__dirname, '../views');
 app.set('views', viewsPath);
 
 app.get('/hello', (req, res) => {
-  res.render('hello', { mensaje: 'HOLA MUNDO' }); // Se muestra la plantilla hello.pug
+  res.render('hello', { mensaje: 'BIENVENIDOS HUMANOS' }); // Se muestra la plantilla hello.pug
 });
 
 app.get('/eje2', (req, res) => {

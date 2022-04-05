@@ -1,5 +1,5 @@
 const express = require('express');
-const Personas = require('../controller/personas');
+const personasController = require('../controller/personas');
 
 const router = express.Router();
 
@@ -12,9 +12,9 @@ router.post('/guardar', (req, res) => {
     edad: body.edad,
   };
 
-  Personas.save(nuevaPersona);
+  personasController.save(nuevaPersona);
 
-  res.redirect('/');
+  res.redirect('/')
 });
 
 module.exports = router

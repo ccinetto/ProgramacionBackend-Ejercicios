@@ -10,17 +10,15 @@
 <body>
   <div>
     <h1>Lista Super</h1>
-    <% if(mostrarLista) { %>
+    <% if (mostrarLista) { %>
       <ul>
-        <% listaSuper.forEach(anItem=> { %>
-          <li>
-            <%= anItem %>
-          </li>
-          <% }) %>
+        <% listaSuper.forEach(element => { %>
+          <li> <%= element %>   </li>
+        <% }) %>
       </ul>
-      <% } else { %>
-        <p>No te muestro nada</p>
-        <% } %>
+    <% } else { %>
+      <p>No te muestro nada</p>
+    <% } %>
   </div>
 
 </body>

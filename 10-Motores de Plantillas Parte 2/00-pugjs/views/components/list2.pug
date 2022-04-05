@@ -1,3 +1,6 @@
-ul
-  each val in listaObjetos
-    li(class= val.style)= val.name
+if mostrarLista2
+  ul
+    each val in listaObjetos
+      li(class= val.style)= val.name
+else 
+  p='No te muestro nada'

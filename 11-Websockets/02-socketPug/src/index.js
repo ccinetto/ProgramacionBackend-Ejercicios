@@ -1,15 +1,13 @@
 const express = require('express');
-const path = require('path');
+const path = require('path')
 const http = require('http')
 const io = require('socket.io')
-
 
 /** INICIALIZACION API con EXPRESS */
 const app = express();
 const puerto = 8080;
 
-const publicPath = path.resolve(__dirname, '../public');
-app.use(express.static(publicPath));
+app.use(express.static('public'));
 
 app.set('view engine', 'pug');
 const viewsPath = path.resolve(__dirname, '../views');
@@ -48,10 +46,10 @@ myWSServer.on('connection', function (socket) {
     // socket.emit('messages', messages);
 
     //PARA ENVIARLE EL MENSAJE A TODOS
-    myWSServer.emit('messages', messages);
+    // myWSServer.emit('messages', messages);
 
     //PARA ENVIARLE MENSAJE A TODOS MENOS AL QUE ME LO MANDO
-    // socket.broadcast.emit('messages', messages);
+    socket.broadcast.emit('messages', messages);
   });
 
   socket.on('askData', (data) => {

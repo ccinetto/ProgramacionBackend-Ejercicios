@@ -8,14 +8,14 @@
 
 <body>
   <h1>My App</h1>
-  <form onsubmit="return addMessage(this)">
+  <form id="form">
     <input type="text" id="username" placeholder="Tu Nombre" />
     <input type="text" id="texto" placeholder="Cuéntanos algo..." />
     <input type="submit" value="Enviar!" />
   </form>
   <div id="messages"></div>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="main.js"></script>
+  <script src="client.js"></script>
 </body>
 
 

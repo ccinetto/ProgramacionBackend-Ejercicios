@@ -1,0 +1,27 @@
+[
+	{
+		"id": "58df1e12-ad6f-42bb-a1be-5ed243f6bca4",
+		"nombre": {},
+		"precio": {}
+	},
+	{
+		"id": "b9694179-ad04-4408-8a4d-5297f41861aa",
+		"nombre": {},
+		"precio": {}
+	},
+	{
+		"id": "d71601f9-1df4-4e2c-bef5-b4455775a59f",
+		"nombre": "Pepsi",
+		"precio": "300"
+	},
+	{
+		"id": "79a2596b-b837-42f9-829f-32152cc8550b",
+		"nombre": "dsadash",
+		"precio": "500"
+	},
+	{
+		"id": "84192642-2e6e-415c-b551-f4dca92f6eb6",
+		"nombre": "Ej2",
+		"precio": "4"
+	}
+]

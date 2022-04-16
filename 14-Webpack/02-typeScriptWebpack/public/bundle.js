@@ -1,0 +1,1 @@
+(()=>{"use strict";setTimeout((()=>console.log("hola mensaje1")),2e3),setTimeout((()=>console.log("hola mensaje2")),5e3)})();

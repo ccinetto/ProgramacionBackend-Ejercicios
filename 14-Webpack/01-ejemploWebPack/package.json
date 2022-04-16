@@ -1,0 +1,19 @@
+{
+  "name": "01-ejemploWebPack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "wrap:prod": "webpack ./src/archivo1.js ./src/archivo2.js ./src/archivo3.js -o ./dist/bundlePrd.js -w --mode=production",
+    "wrap:dev": "webpack ./src/archivo1.js ./src/archivo2.js ./src/archivo3.js -o ./dist/bundleDev.js -w --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  }
+}

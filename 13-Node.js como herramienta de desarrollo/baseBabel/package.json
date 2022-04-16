@@ -1,0 +1,21 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "babel src --out-dir dist",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "nodemon": "^2.0.12"
+  }
+}

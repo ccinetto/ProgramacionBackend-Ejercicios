@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
     "build": "webpack",
-    "wrap:prod": "webpack ./src/archivo1.js ./src/archivo2.js ./src/archivo3.js -o ./dist/bundlePrd.js -w --mode=production",
-    "wrap:dev": "webpack ./src/archivo1.js ./src/archivo2.js ./src/archivo3.js -o ./dist/bundleDev.js -w --mode=development"
+    "wrap:prod": "webpack -w --mode=production",
+    "wrap:dev": "webpack -w --mode=development"
   },
   "keywords": [],
   "author": "",

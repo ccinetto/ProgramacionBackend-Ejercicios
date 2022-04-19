@@ -5,3 +5,4 @@ const saludar3 = require('./archivo3');
 saludar1();
 saludar2();
 saludar3();
+console.log('HOLAAA');

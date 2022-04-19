@@ -5,6 +5,6 @@ const app = express();
 app.use(express.static('public'));
 app.listen(8080, () => console.log('ESTAMOS LISTOS'));
 
-app.use(express.json())
+app.use(express.json());
 
 app.use('/api', mainRouter);

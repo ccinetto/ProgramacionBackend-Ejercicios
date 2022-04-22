@@ -17,18 +17,13 @@ VALUES
 ("cristian", "gerente" );
 
 
-SELECT nombre,puesto
-FROM trabajadores
-WHERE puesto != "RH";
+SELECT nombre,puesto FROM trabajadores WHERE puesto != "RH";
 
 
-UPDATE trabajadores 
-SET puesto="empleado"
-WHERE idTrabajador=1;
+UPDATE trabajadores SET puesto="empleado" WHERE idTrabajador=1;
 
 
-DELETE FROM trabajadores 
-WHERE idTrabajador =3;
+DELETE FROM trabajadores  WHERE idTrabajador =3;
 
 
 DROP TABLE trabajadores;

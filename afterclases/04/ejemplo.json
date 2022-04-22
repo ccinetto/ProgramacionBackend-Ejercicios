@@ -1,0 +1,27 @@
+[
+	{
+		"id": "c1c4f146-0374-4304-9466-e57d6413eaec",
+		"nombre": "Manaos",
+		"precio": "90"
+	},
+	{
+		"id": "a2570ae5-8146-4bfe-b947-d27a8a7f8fc1",
+		"nombre": "Peras",
+		"precio": "200"
+	},
+	{
+		"id": "8b5d79d3-7b20-4996-ac42-73e382bc5efa",
+		"nombre": "Coca Cola",
+		"precio": "90"
+	},
+	{
+		"id": "5a42dd8b-8e04-4330-8a92-ef744b6c4aba",
+		"nombre": "Fernet",
+		"precio": "150"
+	},
+	{
+		"id": "926f7d52-0f17-44fe-81cf-0f1cf7aa5213",
+		"nombre": "Asado",
+		"precio": "2000"
+	}
+]

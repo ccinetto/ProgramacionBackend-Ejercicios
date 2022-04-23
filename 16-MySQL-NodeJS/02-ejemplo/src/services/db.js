@@ -3,7 +3,7 @@ import dbConfig from '../../knexfile';
 
 class DB {
   constructor() {
-    const environment = process.env.NODE_ENV || 'production';
+    const environment = process.env.NODE_ENV || 'development';
     console.log(`SETTING ${environment} DB`);
     const options = dbConfig[environment];
     this.connection = knex(options);

@@ -1,0 +1,9 @@
+/**
+ * APP NodeJS con Babel - Uso Asyn/Await
+ * Babel tira error "ReferenceError: regeneratorRuntime is not defined"
+ * https://www.youtube.com/watch?v=5Kk3DcBNROE
+ */
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [["@babel/plugin-transform-runtime", { "regenerator": true }]]
+}

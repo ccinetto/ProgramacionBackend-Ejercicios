@@ -1,0 +1,24 @@
+show databases;
+db;
+use <dbName>;
+
+db.usuarios.insert({ nombre: 'Juan Carlos', edad: 28 });
+db.usuarios.find();
+
+show collections;
+
+const usuarios = [
+  { nombre: 'Hugo', edad: 28 },
+  { nombre: 'Javier', edad: 30 },
+];
+
+usuarios.forEach((a) => db.usuarios.insert(a));
+
+const productos = [
+  { nombre: 'Medias', precio: 200, stock: 10 },
+  { nombre: 'Zapatos', precio: 500, stock: 5 },
+  { nombre: 'Pantalones', precio: 800, stock: 15 },
+  { nombre: 'Camisas', precio: 1200, stock: 20 },
+];
+
+productos.forEach((a) => db.productos.insert(a));

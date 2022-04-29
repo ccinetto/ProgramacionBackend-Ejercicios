@@ -1,0 +1,6 @@
+6) Contadores
+
+	db.coll.estimatedDocumentCount()
+
+	db.coll.countDocuments({age:32})
+

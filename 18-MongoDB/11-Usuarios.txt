@@ -1,0 +1,9 @@
+11) Usuarios y permisos
+
+	use admin
+	
+	db.createUser ({"user": "root", "pwd": "rootpwd", "roles": ["root"]})
+	
+	db.dropUser("root")
+
+

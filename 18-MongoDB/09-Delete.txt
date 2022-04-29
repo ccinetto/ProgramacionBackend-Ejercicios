@@ -1,0 +1,7 @@
+10) Delete
+	
+	db.coll.deleteOne({name:"Max"})
+	
+	db.coll.deleteMany({name: "Max"})
+	
+	db.coll.deleteMany ({}) 

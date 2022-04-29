@@ -1,0 +1,8 @@
+
+4) Comandos Crear
+
+db.coll.insertone({name:"Max"})
+db.coll.insert([{name:"Max"}, {name: "Alex"}])
+db.coll.insert([{name:"Max"},{name: "Alex"}], {ordered: false})
+db.coll.insert({date: ISODate()})
+db.coll.insert({name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 5000}})

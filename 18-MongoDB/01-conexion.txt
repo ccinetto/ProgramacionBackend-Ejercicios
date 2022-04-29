@@ -1,0 +1,11 @@
+1) Conexion
+ 
+mongo # connects to mongodb://127.0.0.1:27017 by default
+
+mongo --host (host› -port ‹port> -u ‹user> -p <pwd> # omitir contraseña si queremos un prompt
+
+Ejemplos
+mongo  "mongodb://192.168.1.1:27017"
+mongo "mongodb+srv://cluster-name.abcde.mongodb.net/‹dbname>"  -username ‹username›
+ 
+

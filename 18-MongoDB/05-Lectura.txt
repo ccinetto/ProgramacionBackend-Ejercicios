@@ -1,0 +1,11 @@
+5) Comandos Lectura
+
+	db.coll.findone()
+
+	db.coll.find()
+
+	db.coll.find().pretty()
+
+	db.coll.find ({name: "Max", age: 32})
+
+	db.coll.find ({date: ISODate("2020-09-25T13:57:17.180z")})

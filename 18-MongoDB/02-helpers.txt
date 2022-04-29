@@ -1,0 +1,7 @@
+2) Comandos Helpers
+
+show dbs																				========> 				listado de Bases de datos no vacías
+use ‹database name>															========>					selecciona base de dato para trabajar y la crea si no existe
+db // prints the current database								========>					muestra la Base de datos actual de trabajo
+show collections																========>					muestra las colecciones no vacias
+load (myScript.js)															========>					carga un script de comandos

@@ -1,0 +1,55 @@
+
+8) Comando Read
+//Logical
+
+	db.coll. find ([name: {$not: {seq:"Max"}}})
+
+	db. coll.find({$or: [{"year" : 1958}, ("year": 1959}])
+
+	db.coll. find({$nor: [{price: 1.99}, {sale: true}]})
+
+	db.coll.find({
+	 $and: [
+	   {
+	     $or: [{ qty: { $lt: 10 } }, { qty: { $gt: 50 } }],
+	     $or: [{ sale: true }, { price: { $lt: 50 } }],
+	   },
+	 ],
+	});
+
+
+//Element
+	
+	db.coll.find ({name: {$exists: true}})
+	
+	db.coll.find (["zipCode": [$type: 2 }})
+	
+	db.coll.find({"zipCode": { $type: "string"}})
+
+
+// Regex
+	
+	db.coll.find ({name: /^Max/	})		
+	
+	db.coll.find ({name: /^Max$/i}) 			
+
+
+// Array
+	
+	db.coll.find({tags: {$all: ["Realm", "Charts"]}})
+	
+	db.coll.find ([field: [$size: 2}])
+	
+	db.coll.find({results: [{$elemMatch: {product:"xyz", score: {$gte: 8}}}]})
+
+// Projections
+	
+	db.coll.find({"x": 1}, {"actors": 1})
+	
+	db.coll.find({"x": 1}, {"actors": 1, "_id": 0})
+	
+	db.coll.find({"x": 1}, {"actors": 0, "summary": 0}) 
+
+// Sort, skip, limit
+	
+	db.coll.find({}).sort({"year": 1, "rating": -1}).skip(10).limit(3)

@@ -1,0 +1,11 @@
+3) Manejo de Base de datos y Colecciones
+
+db.coll.drop()																	========>					Destruye la coleccion llamada coll
+db.dropDatabase() 															========>					Destruye la base de datos
+db.createCollection("contacts")									========>					Crea la coleccion llamada contacts
+db.coll.stats()																	========>					refleja estadísticas del uso de la base.
+db.coll.storageSize()														========>					tamaño de almacenamiento de la colección.
+db.coll.totalIndexsize()												========>					tamaño total de todos los índices de la colección.
+db.coll.totalsize()														  ========>					tamaño total en bytes de los datos de la colección + el tamaño de cada índice de la colección.
+db.coll.validate({full: true})									========>					comprueba la integridad de una colección.
+db.coll.renamecollection("new coll", true) 		  ========>					renombra una colección, el  2do parámetro para borrar la colección destino si existe.

@@ -1,0 +1,15 @@
+7) Read con Filtros
+
+	db.coll.find ({"year": {$gt: 1970}})
+
+	db.coll.find ({"year": {$gte: 1970}})
+
+	db. coll.find ({"year": {$lt: 1970}})
+
+	db.coll. find({"year": {$lte: 1970}})
+
+	db.coll.find ({"year": {$ne: 1970}})
+
+	db.coll.find ({"year": {sin: [1958, 1959]}})
+
+	db.coll.find ({"year": {$nin: [1958, 1959]}})

@@ -3,3 +3,4 @@
 node_modules
 dist
 *.sqlite
+20-DaaS/02-firebase/firebase.config.json

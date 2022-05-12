@@ -42,4 +42,4 @@ class Recurso1 {
     }
 }
 
-export const Recurso1API = new Recurso1();
+export const Recurso1APIMemoria = new Recurso1();

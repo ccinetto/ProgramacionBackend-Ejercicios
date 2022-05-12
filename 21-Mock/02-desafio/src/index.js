@@ -8,7 +8,7 @@ const app = express();
 
 const between = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
-  };
+};
 
 const devolverAleatorios = (req, res) => {
     const respuesta = [];

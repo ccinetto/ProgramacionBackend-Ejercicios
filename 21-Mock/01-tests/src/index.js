@@ -9,3 +9,5 @@ console.log(r1);
 const r2 = Calculadora.resta(7,3);
 
 console.log(r2);
+
+const r3 = Calculadora.suma('pepe', 4);

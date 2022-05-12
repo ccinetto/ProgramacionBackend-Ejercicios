@@ -3,7 +3,7 @@ import express from 'express';
 
 const app = express();
 
-faker.locale = 'es';
+faker.locale = 'en';
 
 const devolverAleatorios = (req, res) => {
     const respuesta = [];
@@ -14,6 +14,7 @@ const devolverAleatorios = (req, res) => {
             apellido: faker.name.lastName(),
             color: faker.vehicle.color(),
             phone: faker.phone.phoneNumber('11-####-####'),
+            email: faker.internet.email(),
         })
     }
     res.json({

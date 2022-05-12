@@ -18,11 +18,11 @@
     "@babel/node": "^7.14.7",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.14.8",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "jest": "^27.1.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "express": "^4.17.1",
-    "jest": "^27.1.1"
+    "express": "^4.17.1"
   }
 }

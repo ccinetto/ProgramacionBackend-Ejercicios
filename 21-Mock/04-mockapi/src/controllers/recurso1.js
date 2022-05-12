@@ -1,58 +1,48 @@
-import { Recurso1API } from '../api/recurso1';
+import RecursoApi from '../api/recurso1/index';
 
 class Recurso1 {
-    leer(req, res) {
-        const id = req.params.id;
+  async leer(req, res) {
+    const id = req.params.id;
 
-        if (id) {
-            const data = Recurso1API.get(Number(id))
-            return res.json({ data });
-        }
-
-        res.json(Recurso1API.get());
+    if (id) {
+      const data = await RecursoApi.get(Number(id));
+      return res.json({ data });
     }
 
-    generar(req, res) {
-        const cant = req.params.cant ? Number(req.params.cant) : 50;
+    res.json(await RecursoApi.get());
+  }
 
-        for (let i = 0; i < cant; i++) {
-            Recurso1API.post();
-        }
+  async generar(req, res) {
+    const cant = req.params.cant ? Number(req.params.cant) : 50;
 
-        res.json({
-            result: "ok",
-        })
+    for (let i = 0; i < cant; i++) {
+      await RecursoApi.post();
     }
 
-    actualizar(req, res) {
-        const id = Number(req.params.id);
+    res.json({
+      result: 'ok',
+    });
+  }
 
-        const resource = Recurso1API.get(id)
+  async actualizar(req, res) {
+    const id = Number(req.params.id);
 
-        if (!resource.length)
-            return res.status(404).json({ msg: 'id not found' })
+    const resource = await RecursoApi.get(id);
 
+    if (!resource.length) return res.status(404).json({ msg: 'id not found' });
 
-        const dataNueva = req.body;
-        Recurso1API.put(id, dataNueva);
+    const dataNueva = req.body;
+    await RecursoApi.put(id, dataNueva);
 
-        res.json({ msg: 'ok' });
+    res.json({ msg: 'ok' });
+  }
 
-    }
+  async borrar(req, res) {
+    const id = Number(req.params.id);
 
-    borrar(req, res) {
-        const id = Number(req.params.id);
-
-        const resource = Recurso1API.get(id)
-
-        if (!resource.length)
-            return res.status(404).json({ msg: 'id not found' })
-
-        Recurso1API.delete(id);
-        res.json({ msg: 'ok' });
-
-    }
+    await RecursoApi.delete(id);
+    res.json({ msg: 'ok' });
+  }
 }
-
 
 export const Recurso1Controller = new Recurso1();

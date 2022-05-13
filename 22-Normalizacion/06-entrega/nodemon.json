@@ -1,0 +1,7 @@
+{
+    "ignore": [
+        "mongodata.json",
+        "mongoNormalizedData.json",
+        "README"
+    ]
+}

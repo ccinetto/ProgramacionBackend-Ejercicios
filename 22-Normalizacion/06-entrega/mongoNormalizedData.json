@@ -1,0 +1,56 @@
+{
+	"entities": {
+		"author": {
+			"training-dev@edrans.com": {
+				"email": "training-dev@edrans.com",
+				"nombre": "2133231",
+				"apellido": "32312231",
+				"alias": "2323123",
+				"edad": 213231,
+				"avatar": "231231321"
+			},
+			"training-prod@edrans.com": {
+				"email": "training-prod@edrans.com",
+				"nombre": "juan ",
+				"apellido": "calors",
+				"alias": "chupapi",
+				"edad": 22,
+				"avatar": "sadkjaskdsa"
+			}
+		},
+		"message": {
+			"6147d1ff8a1aa26fef23f244": {
+				"_id": "6147d1ff8a1aa26fef23f244",
+				"author": "training-dev@edrans.com",
+				"text": "holaaaaaa"
+			},
+			"6147d21e8a1aa26fef23f245": {
+				"_id": "6147d21e8a1aa26fef23f245",
+				"author": "training-dev@edrans.com",
+				"text": "lksdjsdakjdskladssa"
+			},
+			"6147d2368a1aa26fef23f246": {
+				"_id": "6147d2368a1aa26fef23f246",
+				"author": "training-prod@edrans.com",
+				"text": "poiwieieopwqiewq"
+			},
+			"6147dd0fc2176ee2373e450b": {
+				"_id": "6147dd0fc2176ee2373e450b",
+				"author": "training-dev@edrans.com",
+				"text": "holaaaaaa"
+			},
+			"6147ddb4f5045868e6bdecce": {
+				"_id": "6147ddb4f5045868e6bdecce",
+				"author": "training-dev@edrans.com",
+				"text": "231132"
+			}
+		}
+	},
+	"result": [
+		"6147d1ff8a1aa26fef23f244",
+		"6147d21e8a1aa26fef23f245",
+		"6147d2368a1aa26fef23f246",
+		"6147dd0fc2176ee2373e450b",
+		"6147ddb4f5045868e6bdecce"
+	]
+}

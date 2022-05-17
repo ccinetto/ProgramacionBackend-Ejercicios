@@ -6,6 +6,14 @@ const app = express();
 //----------------------------------------------------------------------------------------------------
 //conseguir todos los articulos de un id en especial
 
+app.get('/original', (req, res) => {
+	const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
+	res.json({
+		data
+	})
+});
+
+
 app.get('/articulos-por-autor', (req, res) => {
 	const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
 
@@ -16,8 +24,8 @@ app.get('/articulos-por-autor', (req, res) => {
 	response = data.filter((article) => article.author._id === authorId);
 	
 	console.log(`Los articulos del author con id ${authorId} son los siguientes: `);
-	// console.log(util.inspect(response, true, 7, true));
-	console.log(response);
+	console.log(util.inspect(response, true, 88, true));
+	// console.log(response);
 
 	res.json({
 		articles: response
@@ -70,7 +78,8 @@ app.get('/comentarios-por-usuario', (req, res) => {
 	});
 
 	return res.json({
-		commentsPerUser
+		commentsPerUser,
+		keys: Object.keys(commentsPerUser),
 	})
 })
 

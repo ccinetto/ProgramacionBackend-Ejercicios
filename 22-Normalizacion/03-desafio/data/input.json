@@ -2,7 +2,7 @@
 	{
 		"id": "1000",
 		"nombre": "Coderhouse",
-		"gerente": {
+		"presidente": {
 			"id": "2",
 			"nombre": "Pedro",
 			"apellido": "Mei",
@@ -10,7 +10,7 @@
 			"direccion": "CABA 457",
 			"telefono": "1567811544"
 		},
-		"encargado": {
+		"vicePresidenteJr": {
 			"id": "3",
 			"nombre": "Pablo",
 			"apellido": "Blanco",
@@ -80,7 +80,7 @@
 	{
 		"id": "1002",
 		"nombre": "Coderhouse2",
-		"gerente": {
+		"presidente": {
 			"id": "22",
 			"nombre": "Martin",
 			"apellido": "Palermo",
@@ -88,7 +88,7 @@
 			"direccion": "CABA 457",
 			"telefono": "1567811544"
 		},
-		"encargado": {
+		"vicePresidenteJr": {
 			"id": "33",
 			"nombre": "Pablo",
 			"apellido": "Perez",
@@ -158,7 +158,7 @@
 	{
 		"id": "1003",
 		"nombre": "Coderhouse",
-		"gerente": {
+		"presidente": {
 			"id": "2",
 			"nombre": "Pedro",
 			"apellido": "Mei",
@@ -166,7 +166,7 @@
 			"direccion": "CABA 457",
 			"telefono": "1567811544"
 		},
-		"encargado": {
+		"vicePresidenteJr": {
 			"id": "3",
 			"nombre": "Pablo",
 			"apellido": "Blanco",

@@ -78,8 +78,8 @@
 			"1000": {
 				"id": "1000",
 				"nombre": "Coderhouse",
-				"gerente": "2",
-				"encargado": "3",
+				"presidente": "2",
+				"vicePresidenteJr": "3",
 				"empleados": [
 					"1",
 					"2",
@@ -93,8 +93,8 @@
 			"1002": {
 				"id": "1002",
 				"nombre": "Coderhouse2",
-				"gerente": "22",
-				"encargado": "33",
+				"presidente": "22",
+				"vicePresidenteJr": "33",
 				"empleados": [
 					"1",
 					"22",
@@ -108,8 +108,8 @@
 			"1003": {
 				"id": "1003",
 				"nombre": "Coderhouse",
-				"gerente": "2",
-				"encargado": "3",
+				"presidente": "2",
+				"vicePresidenteJr": "3",
 				"empleados": [
 					"1",
 					"2",

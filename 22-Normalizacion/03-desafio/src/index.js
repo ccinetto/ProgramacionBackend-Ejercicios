@@ -22,12 +22,33 @@ const person = new schema.Entity(
 );
 
 const company = new schema.Entity('company', {
-  gerente: person,
-  encargado: person,
-  empleados: [person],
+  presidente: person,
+  vicePresidenteJr: person,
+  empleados: [ person ],
 })
 
 const finalSchema = [ company ];
+
+
+app.get('/get-presidente/:companyId', (req, res) => {
+  const originalData = JSON.parse(fs.readFileSync(inputPath));
+
+  const { companyId } = req.params;
+
+  const normalizedData = normalize(originalData, finalSchema).entities;
+
+  const { company, person } = normalizedData;
+
+  const companyRequested = company[companyId];
+
+  if(!companyRequested)
+    return res.status(404).json({msg: 'Compania no existe'})
+
+  const presidentId = companyRequested.presidente;
+  res.json({
+    result: person[presidentId]
+  })
+})
 
 app.get('/normalizar', (req, res) => {
   const originalData = JSON.parse(fs.readFileSync(inputPath));

@@ -25,11 +25,11 @@ const persona = new schema.Entity(
 const empresa = new schema.Entity('empresa', {
   gerente: persona,
   encargado: persona,
-  empleados: [persona],
+  empleados: [ persona ],
 });
 
 const holdingSchema = new schema.Entity('holding', {
-  empresas: [empresa],
+  empresas: [ empresa ],
 });
 
 const finalSchema = holdingSchema;
@@ -44,9 +44,7 @@ app.get('/normalizar', (req, res) => {
   let contenido = JSON.stringify(normalizedData, null, '\t');
 
   fs.writeFileSync(normalizedDataPath, contenido);
-  res.json({
-    normalizedData,
-  })
+  res.json(normalizedData)
 });
 
 

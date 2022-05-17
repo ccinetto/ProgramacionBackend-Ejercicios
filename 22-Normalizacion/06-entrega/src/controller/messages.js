@@ -1,5 +1,11 @@
+import * as util from 'util';
 import { normalize, schema } from 'normalizr';
 import { MessageModel } from '../models/messages';
+
+export const addMessage = async (msge) => {
+  let savedMessage = await MessageModel.create(msge);
+  return savedMessage;
+};
 
 const author = new schema.Entity('author', {}, { idAttribute: 'email' });
 
@@ -13,11 +19,6 @@ const msge = new schema.Entity(
 
 const msgesSchema = new schema.Array(msge);
 
-export const addMessage = async (msge) => {
-  let messageToSave = await new MessageModel(msge);
-  let savedMessage = await messageToSave.save();
-  return savedMessage;
-};
 
 export const getAllMessages = async () => {
   try {
@@ -26,6 +27,7 @@ export const getAllMessages = async () => {
 
     let normalizedMessages = normalize(messagesOriginalData, msgesSchema);
 
+    console.log(util.inspect(normalizedMessages, true, 3, true));
     return normalizedMessages;
   } catch (err) {
     console.log('ERROR');

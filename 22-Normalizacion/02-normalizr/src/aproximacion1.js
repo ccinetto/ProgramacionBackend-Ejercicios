@@ -12,7 +12,6 @@ export const original = async (req, res) => {
 
 
 export const intento1 = async (req, res) => {
-
   const data = JSON.parse(fs.readFileSync(inputPath, 'utf-8'));
 
   const user = new schema.Entity('users');
@@ -22,11 +21,12 @@ export const intento1 = async (req, res) => {
   });
 
   const article = new schema.Entity('articles', {
-    comments: [comment],
     author: user,
+    comments: [comment],
   });
 
-  const normalizedData = normalize(data, [article]);
+  const finalSchema = [article]
+  const normalizedData = normalize(data, finalSchema);
 
 	res.json({
     normalizedData

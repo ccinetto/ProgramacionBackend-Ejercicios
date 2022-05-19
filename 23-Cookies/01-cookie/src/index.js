@@ -9,18 +9,18 @@ app.use(express.json());
 
 //Seteo de cookie antes de responder al cliente
 app.get('/set-normal-cookie', (req, res) => {
-  res.cookie('idioma', 'ingles').json({ msg: 'OK' });
+  res.cookie('idioma', 'español').json({ msg: 'OK' });
 });
 
 //Seteo de cookie firmada antes de responder al cliente
 app.get('/set-signed-cookie', (req, res) => {
-  res.cookie('idioma', 'ingles', { signed: true }).json({ msg: 'OK' });
+  res.cookie('noimbre', 'cristian', { signed: true }).json({ msg: 'OK' });
 });
 
 //Seteo de cookie con tiempo de expiracion
 app.get('/set2', (req, res) => {
   try {
-    res.cookie('server2', 'express2', { maxAge: 5000 }).send({ msg: 'OK' });
+    res.cookie('server2', 'express2', { maxAge: 50000 }).send({ msg: 'OK' });
   } catch (err) {
     res.send(err);
   }

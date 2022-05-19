@@ -4,6 +4,7 @@ import session from 'express-session';
 const app = express();
 
 const oneDay = 1000 * 60 * 60 * 24;
+
 app.use(
   session({
     secret: 'thisismysecrctekeyfhrgfgrfrty84fwir767',

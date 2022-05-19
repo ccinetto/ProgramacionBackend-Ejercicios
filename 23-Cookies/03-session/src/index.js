@@ -1,5 +1,6 @@
 import express from 'express';
 import session from 'express-session';
+import util from 'util';
 
 const app = express();
 
@@ -8,7 +9,7 @@ app.use(
   session({
     secret: 'thisismysecret',
     cookie: { maxAge: 1000 * 60 },
-    saveUninitialized: true,
+    saveUninitialized: false,
     resave: false,
   })
 );
@@ -35,11 +36,10 @@ app.post('/login', (req, res) => {
     res.status(401).json({ msg: 'no estas autorizado' });
   else {
     const user = users[index];
-    req.session.info = {
-      loggedIn: true,
-      contador : 1,
-      admin : user.admin,
-    };
+    req.session.loggedIn = true;
+    req.session.contador = 1;
+    req.session.admin = user.admin;
+
     res.json({msg: 'Bienvenido!!'})
   }
 });
@@ -50,20 +50,21 @@ app.post('/logout', (req, res) => {
 });
 
 const validateLogIn = (req, res, next) => {
-  if (req.session.info && req.session.info.loggedIn) next();
+  console.log(util.inspect(req.session, true, 7, true))
+  if (req.session.loggedIn === true) next();
   else res.status(401).json({ msg: 'no estas autorizado' });
 };
 
 const isAdmin = (req, res, next) => {
-  if (req.session.info && req.session.info.admin) next();
+  if (req.session.admin) next();
   else res.status(401).json({ msg: 'no estas autorizado' });
 };
 
 app.get('/secret-endpoint', validateLogIn, (req, res) => {
-  req.session.info.contador++;
+  req.session.contador++;
   res.json({
     msg: 'informacion super secreta',
-    contador: req.session.info.contador,
+    contador: req.session.contador,
     session: req.session
   });
 });

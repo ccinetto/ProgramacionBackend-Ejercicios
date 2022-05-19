@@ -5,6 +5,7 @@ const app = express();
 
 const mySecret = 'mySecret';
 app.use(cookieParser(mySecret));
+
 app.use(express.json());
 
 app.post('/cookies', (req, res) => {
@@ -23,12 +24,15 @@ app.post('/cookies', (req, res) => {
   if (key && value) {
     res.cookie(key, value, options).send({ proceso: 'ok' });
   } else {
-    res.send({ error: 'set-cookie: falta key o value' });
+    res.status(400).send({ error: 'set-cookie: falta key o value' });
   }
 });
 
 app.get('/cookies', (req, res) => {
-  res.send(req.cookies);
+  res.json({
+    normales: req.cookies,
+    firmadas: req.signedCookies
+  });
 });
 
 app.delete('/cookies/:cookieKey', (req, res) => {

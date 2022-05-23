@@ -1,0 +1,21 @@
+<div class="container my-5">
+  <h1>REGISTER</h1>
+  <form class="form" action="/register" method="post" role="form" autocomplete="off">
+    <div class="form-group">
+      <input id="nombre" name='nombre' placeholder="nombre" class="form-control" type="text" required>
+    </div>
+    <div class="form-group">
+      <input id="password"  name='password' placeholder="password" class="form-control" type="password" required>
+    </div>
+    <div class="form-group">
+      <input id="direccion"  name='direccion' placeholder="direccion" class="form-control" type="text" required>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-success my-3" type="submit" value="Register">
+    </div>
+  </form>
+  
+  <div class="text-left">
+    <button class="btn btn-success my-3" onclick="location.href = '/login'">Ir a Login</button>
+  </div>
+</div>

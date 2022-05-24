@@ -4,24 +4,22 @@ import session from 'express-session';
 import mainRouter from '../routes';
 import MongoStore from 'connect-mongo';
 import config from '../config';
-const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+
+const ttlSeconds = 180;
 
 const StoreOptions = {
-  /* ----------------------------------------------------- */
-  /*           Persistencia por redis database             */
-  /* ----------------------------------------------------- */
   store: MongoStore.create({
     mongoUrl: config.MONGO_ATLAS_URL,
-    mongoOptions: advancedOptions,
+    crypto: {
+      secret: 'squirrel',
+    },
   }),
-  /* ----------------------------------------------------- */
-
   secret: 'shhhhhhhhhhhhhhhhhhhhh',
   resave: false,
-  saveUninitialized: false /* ,
+  saveUninitialized: false,
   cookie: {
-      maxAge: 40000
-  } */,
+    maxAge: ttlSeconds * 1000,
+  },
 };
 
 const app = express();

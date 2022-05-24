@@ -18,8 +18,8 @@ router.get('/', (req, res) => {
   res.send('Servidor express ok!');
 });
 
-router.post('/login', (req, res) => {
-  const { username, password } = req.body;
+router.get('/login', (req, res) => {
+  const { username, password } = req.query;
 
   const index = users.findIndex((aUser) => aUser.username === username && aUser.password === password);
   console.log(index)
@@ -38,6 +38,7 @@ router.post('/login', (req, res) => {
 });
 
 const validateLogIn = (req, res, next) => {
+  console.log(req.session);
   if (req.session.info && req.session.info.loggedIn) next();
   else res.status(401).json({ msg: 'no estas autorizado' });
 };

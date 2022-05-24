@@ -4,19 +4,21 @@ import session from 'express-session';
 import mainRouter from '../routes';
 import MongoStore from 'connect-mongo';
 
-const StoreOptions = {
-  /* ----------------------------------------------------- */
-  /*           Persistencia por redis database             */
-  /* ----------------------------------------------------- */
-  store: MongoStore.create({ mongoUrl: 'mongodb://localhost/coderhouse' }),
-  /* ----------------------------------------------------- */
+const ttlSeconds = 180;
 
+const StoreOptions = {
+  store: MongoStore.create({
+    mongoUrl: 'mongodb://localhost/coderhouse',
+    crypto: {
+      secret: 'squirrel',
+    },
+  }),
   secret: 'shhhhhhhhhhhhhhhhhhhhh',
   resave: false,
-  saveUninitialized: false /* ,
+  saveUninitialized: false,
   cookie: {
-      maxAge: 40000
-  } */,
+    maxAge: ttlSeconds * 1000,
+  },
 };
 
 const app = express();

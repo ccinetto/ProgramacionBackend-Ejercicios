@@ -3,8 +3,6 @@ import path from 'path';
 
 const router = Router();
 
-const publicPath = path.resolve(__dirname, '../../public');
-
 let usuarios = [
   { nombre: 'pepe', password: 'bokitaTheBiggest' },
   { nombre: 'jacinto', password: 'mipassword123' },

@@ -83,15 +83,20 @@ export const signUpFunc = new LocalStrategy(strategyOptions, signup);
  * Esta funcion agarra el usuario que recibio y lo guarda en req.session.passport 
  * En este caso estamos creando una key llamado user con la info del usuario dentro de req.session.passport
  */
-passport.serializeUser((user, done) => {
-  // console.log('Se Ejecuta el serializeUser');
-  // console.log(user);                 
-  done(null, user);
+ passport.serializeUser((user, done) => {
+  console.log('Se Ejecuta el serializeUser');
+  //Notar que vamos a guardar en req.session.passport el id del usuario. nada mas
+  done(null, user._id);
 });
 
 /**
- * DeserializeUser Permite tomar la info que mandamos con el serializeUser para hacer algun extra de busqueda de informacion
+ * DeserializeUser Permite tomar la info que mandamos con el serializeUser para crear el objeto req.user 
  */
-passport.deserializeUser((user, done) => {
-  done(null, user);
+ passport.deserializeUser((userId, done) => {
+  console.log('Se Ejecuta el desserializeUser');
+  //Notar que recibimos el userId en la funcion (que es lo que mandamos en el done del serializedUser)
+  //Buscamos el usuario con ese id y lo retornamos. El resultado va a estar en req.user
+  UserModel.findById(userId).then((user) => {
+    return done(null, user);
+  })
 });

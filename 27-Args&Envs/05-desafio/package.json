@@ -1,0 +1,27 @@
+{
+  "name": "baseTypescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "ejemplo": "node dist/index.js pepe juan carlos -x -y 4 -n5 -abc --foo=bar --port=8080 -h -v",
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.2",
+    "@types/yargs": "^17.0.7",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "yargs": "^17.2.1"
+  }
+}

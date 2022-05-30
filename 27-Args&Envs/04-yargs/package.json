@@ -1,0 +1,25 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "ej1-prueba1": "npm run build && node ./dist/ej1.js --ships=4 --distance=22",
+    "ej1-prueba2": "npm run build && node ./dist/ej1.js --ships 12 --distance 98.7",
+    "dev": "nodemon --exec babel-node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "yargs": "^17.5.1"
+  }
+}

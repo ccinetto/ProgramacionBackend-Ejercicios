@@ -1,0 +1,15 @@
+{
+  "name": "03-argumentos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "ejemplo1" : "node ejemplo-argv.js arg1 arg2 arg3",
+    "ejemplo2" : "node ejemplo-stdout.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

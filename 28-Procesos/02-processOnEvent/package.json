@@ -1,0 +1,15 @@
+{
+  "name": "02-processonevent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eje1" : "node 01-beforeExitEvent.js",
+    "eje2" : "node 02-exitEvent.js",
+    "eje3" : "node 03-uncaughtExceptionEvent.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

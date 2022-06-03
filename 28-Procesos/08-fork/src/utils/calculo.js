@@ -1,4 +1,4 @@
-export const calculo = (): number => {
+export const calculo = () => {
   let sum = 0;
   for (let i = 0; i < 6e9; i++) {
     sum += i;
@@ -11,8 +11,6 @@ process.on('message', (msg) => {
     console.log('Start calculo');
     const sum = calculo();
 
-    if (process && process.send) {
-      process.send(sum);
-    }
+    process.send(sum);
   }
 });

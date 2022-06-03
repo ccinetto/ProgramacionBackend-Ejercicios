@@ -1,5 +1,4 @@
 import express from 'express';
-import { calculo } from './utils/calculo';
 import { fork } from 'child_process';
 import path from 'path';
 

@@ -1,0 +1,28 @@
+{
+  "name": "pm2example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prod:fork": "npm run build && pm2 start dist/index.js --watch --name=EjemploPm2Fork",
+    "prod:cluster": "npm run build && pm2 start dist/index.js --watch -i max --name=EjemploPm2Cluster",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.10.3",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pm2": "^5.1.2"
+  }
+}

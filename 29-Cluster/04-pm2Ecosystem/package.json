@@ -1,0 +1,30 @@
+{
+  "name": "baseTypescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:prod": "pm2 start dist/index.js --watch",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.10.3",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@types/minimist": "^1.2.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "minimist": "^1.2.5",
+    "pm2": "^5.1.2"
+  }
+}

@@ -6,9 +6,10 @@ module.exports = {
     {
       script: 'dist/index.js',
       watch: true,
+      name: 'BokitaTheBiggest',
       autorestart: true,
-      // instances: 'max',
-      instances: 3,
+      instances: 'max',
+      // instances: 3,
     },
   ],
 };

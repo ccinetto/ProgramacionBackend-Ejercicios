@@ -8,6 +8,8 @@
     "start": "node dist/index.js",
     "prod:fork": "npm run build && pm2 start dist/index.js --watch --name=EjemploPm2Fork",
     "prod:cluster": "npm run build && pm2 start dist/index.js --watch -i max --name=EjemploPm2Cluster",
+    "stop:all": "pm2 stop all",
+    "delete:all": "pm2 detele all",
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

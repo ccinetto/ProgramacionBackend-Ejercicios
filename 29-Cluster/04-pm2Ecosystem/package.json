@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "start:prod": "pm2 start dist/index.js --watch",
+    "prod": "pm2 start ecosystem.config.js",
+    "stop:all": "pm2 stop all",
+    "delete:all": "pm2 detele all",
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

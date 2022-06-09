@@ -2,6 +2,8 @@ import express from 'express';
 const app = express();
 
 app.get('/', (req, res) => {
+  console.log(`PID => ${process.pid} will answer`);
+
   res.json({
     pid: process.pid,
     msg: 'HOLA',
@@ -22,9 +24,10 @@ app.get('/slow', function (req, res) {
 });
 
 app.get('/muerte', (req, res) => {
+  const { code } = req.query;
   res.json({ msg: 'OK' });
   console.log(`PID => ${process.pid} will die`);
-  process.exit(0);
+  process.exit(code ? Number(code) : 0);
 });
 
 export default app;

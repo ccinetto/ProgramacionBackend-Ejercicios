@@ -9,7 +9,7 @@ module.exports = {
       watch: true,
       autorestart: true,
       // instances: 4,
-      args: '--puerto=3001',
+      args: '--puerto=8080',
     },
     {
       name: 'app2',
@@ -17,7 +17,7 @@ module.exports = {
       watch: true,
       autorestart: true,
       // instances: 4,
-      args: '--puerto=3002',
+      args: '--puerto=8081',
     },
     {
       script: './service-worker/',

@@ -1,6 +1,6 @@
 import Server from './services/server';
 
-const PORT = 8080;
+const PORT = 3000;
 
 Server.listen(PORT, () =>
   console.log(

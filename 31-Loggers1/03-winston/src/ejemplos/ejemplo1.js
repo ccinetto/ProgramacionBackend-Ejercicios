@@ -10,7 +10,7 @@ import winston from 'winston';
  */
 export const ejemplo1 = () => {
   const logConfiguration = {
-    transports: [new winston.transports.Console()],
+    transports: [ new winston.transports.Console()  ],
   };
 
   const logger = winston.createLogger(logConfiguration);

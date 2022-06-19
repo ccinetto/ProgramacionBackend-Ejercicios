@@ -1,0 +1,20 @@
+config:
+  target: 'http://localhost:8081'
+  #The following example generates 50 virtual users every second for 5 seconds:
+  phases:
+    - duration: 5
+      arrivalRate: 50
+      name: Warm up
+  payload:
+    path: 'keys.csv'
+    fields:
+      - 'id'
+#Every user will do the following requests
+scenarios:
+  - name: 'Search all Materials & then find a specific material'
+    flow:
+      - get:
+          url: '/api/materials'
+      - think: 10
+      - get:
+          url: '/api/materials?id={{id}}'

@@ -14,13 +14,11 @@ export const ejemplo3 = () => {
       consola: { type: 'console' },
     },
     categories: {
-      default: { appenders: ['fileAppender', 'consola'], level: 'error' },
+      default: { appenders: ['fileAppender', 'consola'], level: 'info' },
     },
   });
 
   const logger = log4js.getLogger();
-
-  logger.level = 'warn';
 
   // Log a message
   logger.trace('Imprimimos Trace');

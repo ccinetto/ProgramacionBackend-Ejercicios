@@ -1,0 +1,14 @@
+Ejecutar Prueba Artillery modo Fork
+
+1) Ejecutar Aplicacion en modo Fork.
+2) Ejecutar npm run artillery:fork
+
+
+Ejecutar Prueba Artillery modo Cluster
+
+1) Ejecutar npm run start:cluster
+2) Ejecutar npm run artillery:cluster
+
+
+Opcionalmente se pueden correr las aplicaciones en modo fork y cluster 
+con pm2 utilizando el arhcivo ecosystem.config.js

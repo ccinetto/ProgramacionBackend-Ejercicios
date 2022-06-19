@@ -15,13 +15,12 @@ export const ejemplo4 = () => {
     },
     categories: {
       default: { appenders: ['fileAppender', 'consola'], level: 'error' },
-      miLoggerPersonalizado: { appenders: ['consola'], level: 'info' },
+      miLoggerPersonalizado: { appenders: ['consola'], level: 'warn' },
     },
   });
 
   const logger = log4js.getLogger('miLoggerPersonalizado');
 
-  logger.level = 'warn';
 
   // Log a message
   logger.trace('Imprimimos Trace');

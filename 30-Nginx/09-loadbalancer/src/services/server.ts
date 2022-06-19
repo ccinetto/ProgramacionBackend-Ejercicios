@@ -10,6 +10,15 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/api/randoms', (req, res) => {
+  console.log('Resolving / endpoint');
+  res.json({
+    pid: process.pid,
+    msg: `HOLA desde puerto ${PORT}`,
+  });
+});
+
+
 app.get('/slow', function (req, res) {
   console.log(`PID => ${process.pid} will work slow`);
   let sum = 0;

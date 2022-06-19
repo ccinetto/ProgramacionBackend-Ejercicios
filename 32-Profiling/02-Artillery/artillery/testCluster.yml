@@ -1,0 +1,18 @@
+config:
+  target: 'http://localhost:8082'
+  phases:
+    - duration: 5
+      arrivalRate: 50
+      name: Warm up
+  payload:
+    path: 'keys.csv'
+    fields:
+      - 'id'
+scenarios:
+  - name: 'Search a Material & search a Practice'
+    flow:
+      - get:
+          url: '/api/materials'
+      - think: 10
+      - get:
+          url: '/api/materials?id={{id}}'

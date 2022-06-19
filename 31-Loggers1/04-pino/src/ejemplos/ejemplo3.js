@@ -15,7 +15,9 @@ export const ejemplo3 = () => {
     edad: 28,
   };
 
-  logger.debug('el nombre es %s', obj.nombre);
+  logger.debug({
+    bokita: "TheBiggest"
+  },'el nombre es %s', obj.nombre);
   logger.info('la edad es %d', obj.edad);
   logger.warn('el objeto es %o', obj);
 };

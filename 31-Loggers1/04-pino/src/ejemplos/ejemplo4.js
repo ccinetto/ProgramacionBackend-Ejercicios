@@ -10,21 +10,21 @@ export const ejemplo4 = () => {
     level: 'trace',
   });
 
-  const loggerHijo = loggerPadre.child({ tipoLogger: 'Hijo' });
+  const loggerHijo = loggerPadre.child({ hijo: true });
   const obj = {
     nombre: 'cristian',
     edad: 28,
   };
 
-  loggerHijo.trace({
+  loggerPadre.trace({
     mensaje: 'Imprimimos Trace',
     nombre: 'cristian',
     edad: 22,
   });
   loggerHijo.debug('Imprimimos Debug');
-  loggerHijo.info('Imprimimos Info');
+  loggerPadre.info('Imprimimos Info');
   loggerHijo.warn('Imprimimos Warn');
-  loggerHijo.error('Imprimimos Error');
+  loggerPadre.error('Imprimimos Error');
   loggerHijo.fatal(
     {
       mensaje: 'Imprimimos Fatal',

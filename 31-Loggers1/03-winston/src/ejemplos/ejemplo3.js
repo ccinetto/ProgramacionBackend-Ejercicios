@@ -19,7 +19,7 @@ export const ejemplo3 = () => {
         format: 'MMM-DD-YYYY HH:mm:ss',
       }),
       colorize(),
-      printf((info) => `${info.level} |  ${[info.timestamp]} | ${info.message}`)
+      printf((info) => `${info.level}|${[info.timestamp]}|${info.message}`)
     ),
     transports: [new transports.Console()],
   };

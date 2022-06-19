@@ -4,4 +4,4 @@ import { ejemplo3 } from './ejemplos/ejemplo3';
 import { ejemplo4 } from './ejemplos/ejemplo4';
 
 // ejemplo1();
-ejemplo1();
+ejemplo3();

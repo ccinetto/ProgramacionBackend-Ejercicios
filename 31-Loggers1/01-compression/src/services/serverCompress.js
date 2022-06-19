@@ -4,9 +4,11 @@ import compression from 'compression';
 
 const app = express();
 
-app.use(compression());
+app.get('/normal', (req, res) => {
+  res.send(data);
+});
 
-app.get('/', (req, res) => {
+app.get('/gzip', compression(), (req, res) => {
   res.send(data);
 });
 

@@ -11,7 +11,7 @@ import log4js from 'log4js';
 export const ejemplo1 = () => {
   const logger = log4js.getLogger();
 
-  logger.level = 'warn';
+  logger.level = 'trace';
 
   // Log a message
   logger.trace('Imprimimos Trace');

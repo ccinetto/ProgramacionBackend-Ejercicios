@@ -23,13 +23,11 @@ export const ejemplo2 = () => {
       fileAppender: { type: 'file', filename: './logs/example-1.log' },
     },
     categories: {
-      default: { appenders: ['fileAppender'], level: 'error' },
+      default: { appenders: ['fileAppender'], level: 'trace' },
     },
   });
 
   const logger = log4js.getLogger();
-
-  logger.level = 'warn';
 
   // Log a message
   logger.trace('Imprimimos Trace');

@@ -34,4 +34,13 @@ app.get('/saludar', (req, res) => {
   });
 });
 
+app.get('/despedir', (req, res) => {
+
+  res.json({
+    pid: process.pid,
+    msg: `CHAU desde puerto ${PORT} y process id ${process.pid}`,
+    variable: process.env.ENV_EJEMPLO,
+  });
+});
+
 export default app;

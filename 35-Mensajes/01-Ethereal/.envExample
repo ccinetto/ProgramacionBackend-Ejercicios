@@ -1,0 +1,4 @@
+PORT=your-app-port
+ETHEREAL_EMAIL=your-email@ethereal.email
+ETHEREAL_PASSWORD=your-password
+ETHEREAL_NAME=you-ethereal-name

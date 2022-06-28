@@ -1,0 +1,4 @@
+SNS_ARN=arn:aws:sns:us-east-1:123456789:name
+AWS_ACCESS_KEY_ID=AWSAccessKeyId
+AWS_SECRET_ACCESS_KEY=AWSSecretKey
+AWS_REGION=region-donde-crearon-el-tema

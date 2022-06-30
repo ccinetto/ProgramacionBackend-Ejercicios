@@ -23,7 +23,7 @@ router.post('/send-email', async (req, res) => {
     const response = await EmailService.sendEmail(
       destination,
       subject,
-      content
+      content,
     );
 
     res.json(response);

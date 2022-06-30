@@ -15,7 +15,7 @@
 7. Ejecutar un POST Request al endpoint /send-message y enviar en el body el numero a quien queremos enviar el mensaje y el contenido
    Ej:
    {
-   "destination":"+541168796601",
+   "destination":"+54111111111",
    "content":"mensaje para el mundo"
    }
 8. Al recibir el 200, un mensaje de texto nos habra llegado a nuestro celular

@@ -1,4 +1,6 @@
 import { CategoryModel } from '../models';
+import { ProductsAPI } from './index';
+import { ApiError, ErrorStatus } from './error';
 
 const find = (id) => {
   if (id) return CategoryModel.findById(id);
@@ -13,7 +15,17 @@ const update = (id, data) =>
     new: true,
   });
 
-const remove = (id) => CategoryModel.findByIdAndDelete(id);
+const remove = async (id) => {
+  const productsWithCategory = await ProductsAPI.findByCategory(id);
+
+  if (productsWithCategory.length > 0)
+    throw new ApiError(
+      'Cannot delete category because there is products with that category',
+      ErrorStatus.BadRequest,
+    );
+
+  CategoryModel.findByIdAndDelete(id);
+};
 
 export default {
   find,

@@ -25,4 +25,12 @@ passport.use('signup', signUpFunc);
 
 app.use('/api', mainRouter);
 
+app.use(function (err, req, res, next) {
+  const status = err.statusCode || 500;
+  const msg = err.message || 'Internal Server Error';
+
+  Logger.error(err);
+  res.status(status).send({ msg });
+});
+
 export default app;

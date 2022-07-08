@@ -7,6 +7,7 @@ import {
   createUser,
 } from '../controllers/users';
 import Logger from './logger';
+import { NotificationService } from './notifications';
 
 const strategyOptions = {
   usernameField: 'email',
@@ -54,7 +55,7 @@ const signup = async (req, username, password, done) => {
       };
 
       const newUser = await createUser(userData);
-
+      await NotificationService.notifyNewUserByEmail(newUser);
       return done(null, newUser);
     }
   } catch (error) {

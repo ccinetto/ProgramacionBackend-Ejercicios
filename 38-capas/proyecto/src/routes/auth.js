@@ -1,6 +1,7 @@
 import passport from 'passport';
 import { Router } from 'express';
 import Logger from '../services/logger';
+import { EmailService } from '../services/notifications';
 
 const passportOptions = { badRequestMessage: 'Invalid username / password' };
 

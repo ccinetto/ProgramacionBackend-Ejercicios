@@ -37,8 +37,20 @@ const deleteProduct = async (req, res) => {
   res.json({ msg: 'Product Deleted', data: result });
 };
 
+const createOrder = async (req, res) => {
+  const { user } = req;
+  const cart = await CartAPI.getCardByUser(user._id);
+
+  await CartAPI.createOrder(cart._id);
+
+  res.json({
+    msg: 'Order Created',
+  });
+};
+
 export default {
   getCart,
   addProduct,
   deleteProduct,
+  createOrder,
 };

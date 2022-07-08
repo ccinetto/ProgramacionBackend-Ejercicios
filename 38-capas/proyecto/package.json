@@ -26,8 +26,10 @@
 		"express-async-handler": "^1.2.0",
 		"express-session": "^1.17.3",
 		"mongoose": "^6.4.3",
+		"nodemailer": "^6.7.7",
 		"passport": "^0.6.0",
 		"passport-local": "^1.0.0",
+		"twilio": "^3.78.0",
 		"winston": "^3.8.1"
 	}
 }

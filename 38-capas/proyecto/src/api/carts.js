@@ -1,4 +1,5 @@
 import { CartModel } from '../models';
+import { NotificationService } from '../services/notifications';
 import { ProductsAPI, ApiError, ErrorStatus } from './index';
 
 const create = (userId) => CartModel.create({ userId });
@@ -67,4 +68,32 @@ const deleteProducts = async (cartId, productId, items) => {
   return cart;
 };
 
-export default { create, addProduct, deleteProducts, getCardByUser };
+const emptyCart = async (cartId) => {
+  const cart = await CartModel.findById(cartId);
+
+  if (!cart) ApiError('Cart does not exist', ErrorStatus.BadRequest);
+
+  cart.products = [];
+  await cart.save();
+
+  return cart;
+};
+
+const createOrder = async (cartId) => {
+  const cart = await CartModel.findById(cartId);
+
+  if (!cart) ApiError('Cart does not exist', ErrorStatus.BadRequest);
+
+  await NotificationService.notifyNewOrderUsingWhatsApp(cart);
+
+  await emptyCart(cartId);
+};
+
+export default {
+  create,
+  addProduct,
+  deleteProducts,
+  getCardByUser,
+  emptyCart,
+  createOrder,
+};

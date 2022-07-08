@@ -1,5 +1,5 @@
-import { UserModel, CartModel } from '../models';
 import Logger from '../services/logger';
+import { UserAPI, CartAPI } from '../api';
 
 export const validateNewUser = (newUser) => {
   return (
@@ -13,13 +13,11 @@ export const validateNewUser = (newUser) => {
   );
 };
 
-export const getUserByEmail = (email) => UserModel.findOne({ email });
+export const getUserByEmail = (email) => UserAPI.findByEmail(email);
 
 export const createUser = async (userData) => {
-  const newUser = await UserModel.create(userData);
-  await CartModel.create({
-    userId: newUser.id,
-  });
+  const newUser = await UserAPI.create(userData);
+  await CartAPI.create(newUser.id);
   return newUser;
 };
 

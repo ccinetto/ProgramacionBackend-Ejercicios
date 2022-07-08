@@ -17,13 +17,15 @@ export const getUserByEmail = (email) => UserAPI.findByEmail(email);
 
 export const createUser = async (userData) => {
   const newUser = await UserAPI.create(userData);
-  await CartAPI.create(newUser.id);
+  await CartAPI.create(newUser._id);
   return newUser;
 };
 
 export const isLoggedIn = (req, res, done) => {
   Logger.info('Is Authenticated');
   Logger.info(req.isAuthenticated());
+  Logger.info('req.user');
+  Logger.info(req.user);
   if (!req.isAuthenticated())
     return res.status(401).json({ msg: 'Unathorized' });
 

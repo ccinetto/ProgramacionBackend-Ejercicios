@@ -1,8 +1,20 @@
-import mongoose from 'mongoose';
+import mongoose, { Mongoose } from 'mongoose';
 import { productsCollectionName } from './products';
 import { userCollectionName } from './user';
 
 export const cartCollectionName = 'cart';
+
+const productItem = new mongoose.Schema(
+  {
+    productId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: productsCollectionName,
+      required: true,
+    },
+    items: { type: Number, default: 1 },
+  },
+  { _id: false },
+);
 
 const cartSchema = new mongoose.Schema(
   {
@@ -11,16 +23,7 @@ const cartSchema = new mongoose.Schema(
       ref: userCollectionName,
       required: true,
     },
-    products: [
-      {
-        id: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: productsCollectionName,
-          required: true,
-        },
-        items: { type: Number, default: 1 },
-      },
-    ],
+    products: [productItem],
   },
   { versionKey: false, timestamps: true },
 );

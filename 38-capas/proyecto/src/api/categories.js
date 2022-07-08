@@ -1,6 +1,5 @@
 import { CategoryModel } from '../models';
-import { ProductsAPI } from './index';
-import { ApiError, ErrorStatus } from './error';
+import { ProductsAPI, ApiError, ErrorStatus } from './index';
 
 const find = (id) => {
   if (id) return CategoryModel.findById(id);

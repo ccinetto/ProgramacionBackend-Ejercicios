@@ -19,14 +19,13 @@ const signUp = (req, res, next) => {
 
 const login = (req, res, next) => {
   passport.authenticate('login', passportOptions, (err, user, info) => {
-    Logger.info('Info LOGIN');
-    Logger.info(err, user, info);
     if (err) {
       return next(err);
     }
     if (!user) return res.status(401).json({ data: info });
-
-    res.json({ msg: 'login OK', user });
+    req.logIn(user, function (err) {
+      return res.json({ msg: 'login OK', user });
+    });
   })(req, res, next);
 };
 

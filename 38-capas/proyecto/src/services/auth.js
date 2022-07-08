@@ -82,6 +82,7 @@ passport.serializeUser((user, done) => {
  * DeserializeUser Permite tomar la info que mandamos con el serializeUser para crear el objeto req.user
  */
 passport.deserializeUser((userId, done) => {
+  console.log('HOLAAAA\n\n\n\n\n');
   Logger.info('Se Ejecuta el desserializeUser');
   //Notar que recibimos el userId en la funcion (que es lo que mandamos en el done del serializedUser)
   //Buscamos el usuario con ese id y lo retornamos. El resultado va a estar en req.user

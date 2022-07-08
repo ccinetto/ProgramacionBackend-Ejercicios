@@ -17,10 +17,29 @@ const update = (id, data) =>
 
 const remove = (id) => ProductModel.findByIdAndDelete(id);
 
+const addStock = async (id, stock) => {
+  const product = await find(id);
+
+  product.stock += stock;
+
+  await product.save();
+};
+
+const removeStock = async (id, stock) => {
+  const product = await find(id);
+
+  if (product.stock < stock) product.stock = 0;
+  else product.stock -= stock;
+
+  await product.save();
+};
+
 export default {
   find,
   create,
   update,
   remove,
   findByCategory,
+  addStock,
+  removeStock,
 };

@@ -12,6 +12,6 @@ export default {
   GMAIL_NAME: process.env.GMAIL_NAME || 'GMAIL owner name',
   TWILIO_ACCOUNT_ID: process.env.TWILIO_ACCOUNT_ID || 'twilioId',
   TWILIO_TOKEN: process.env.TWILIO_TOKEN || 'twilioToken',
-  TWILIO_CELLPHONE: process.env.TWILIO_CELLPHONE || '+123456789',
+  TWILIO_WSP_CELLPHONE: process.env.TWILIO_WSP_CELLPHONE || '+123456789',
   ADMIN_PHONE: process.env.ADMIN_PHONE || '+5491166666666',
 };

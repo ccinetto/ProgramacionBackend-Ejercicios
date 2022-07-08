@@ -17,7 +17,7 @@ const addProduct = async (cartId, productId, items) => {
 
   const cart = await CartModel.findById(cartId);
 
-  if (!cart) ApiError('Cart does not exist', ErrorStatus.BadRequest);
+  if (!cart) throw new ApiError('Cart does not exist', ErrorStatus.BadRequest);
 
   const index = cart.products.findIndex(
     (aProduct) => aProduct.productId == productId,
@@ -46,7 +46,7 @@ const deleteProducts = async (cartId, productId, items) => {
 
   const cart = await CartModel.findById(cartId);
 
-  if (!cart) ApiError('Cart does not exist', ErrorStatus.BadRequest);
+  if (!cart) throw new ApiError('Cart does not exist', ErrorStatus.BadRequest);
 
   const index = cart.products.findIndex(
     (aProduct) => aProduct.productId == productId,
@@ -71,7 +71,7 @@ const deleteProducts = async (cartId, productId, items) => {
 const emptyCart = async (cartId) => {
   const cart = await CartModel.findById(cartId);
 
-  if (!cart) ApiError('Cart does not exist', ErrorStatus.BadRequest);
+  if (!cart) throw new ApiError('Cart does not exist', ErrorStatus.BadRequest);
 
   cart.products = [];
   await cart.save();
@@ -82,7 +82,13 @@ const emptyCart = async (cartId) => {
 const createOrder = async (cartId) => {
   const cart = await CartModel.findById(cartId);
 
-  if (!cart) ApiError('Cart does not exist', ErrorStatus.BadRequest);
+  if (!cart) throw new ApiError('Cart does not exist', ErrorStatus.BadRequest);
+
+  if (!cart.products.length)
+    throw new ApiError(
+      'Cannot create an order without products in cart',
+      ErrorStatus.BadRequest,
+    );
 
   await NotificationService.notifyNewOrderUsingWhatsApp(cart);
 

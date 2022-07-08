@@ -33,7 +33,7 @@ const notifyNewUserByEmail = async (userData) => {
 const notifyNewOrderUsingWhatsApp = async (orderData) => {
   const params = {
     body: `A New Order was created. See info below\n\n\n ${orderData}`,
-    from: `whatsapp:${Config.TWILIO_CELLPHONE}`,
+    from: `whatsapp:${Config.TWILIO_WSP_CELLPHONE}`,
     to: `whatsapp:${Config.ADMIN_PHONE}`,
   };
 

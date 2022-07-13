@@ -26,7 +26,7 @@ const addProduct = async (cartId, productId, items) => {
   if (index < 0) {
     const newProductItem = {
       productId: productId,
-      items,
+      items: Number(items),
     };
     cart.products.push(newProductItem);
   } else cart.products[index].items += items;

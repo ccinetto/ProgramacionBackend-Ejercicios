@@ -17,11 +17,17 @@ const strategyOptions = {
 
 const login = async (req, username, password, done) => {
   Logger.info('LOGINNN');
-  const user = await getUserByEmail(username);
 
-  if (!user || !user.isValidPassword(password)) {
+  const user = await getUserByEmail(username);
+  if (!user) {
     return done(null, false, { message: 'Invalid Username/Password' });
   }
+  const isValidPassword = await user.isValidPassword(password);
+
+  if (!isValidPassword) {
+    return done(null, false, { message: 'Invalid Username/Password' });
+  }
+
   Logger.info('SALIO TODO BIEN');
   return done(null, user);
 };

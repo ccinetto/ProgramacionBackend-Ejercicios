@@ -1,0 +1,26 @@
+[
+	{
+		"nombre": "lapiz",
+		"precioARS": 200,
+		"precioUSD": 1,
+		"hasStock": true,
+		"stock": 15,
+		"id": "1"
+	},
+	{
+		"nombre": "cartuchera",
+		"precioARS": 250,
+		"precioUSD": 1.25,
+		"hasStock": true,
+		"stock": 15,
+		"id": "2"
+	},
+	{
+		"nombre": "boligoma",
+		"precioARS": 260,
+		"precioUSD": 1.3,
+		"hasStock": true,
+		"stock": 15,
+		"id": "3"
+	}
+]

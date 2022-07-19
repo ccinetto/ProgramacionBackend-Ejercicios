@@ -1,5 +1,5 @@
 import ApiNoticias from '../apis/noticias';
-
+import Logger from '../services/logger';
 export default class ControladorNoticias {
 
 	constructor() {
@@ -16,7 +16,7 @@ export default class ControladorNoticias {
 			})
 		}
 		catch(err){
-			console.log("Error obtener Noticias", err);
+			Logger.error("Error obtener Noticias");
 			next(err);
 		}
 	}
@@ -32,14 +32,14 @@ export default class ControladorNoticias {
 			})
 		}
 		catch(err){
-			console.log("Error guardar Noticias", err);
+			Logger.error("Error guardar Noticias");
 			next(err);
 		}
 	}
 
 	actualizarNoticia = async (req, res, next) => {
 		try{
-			console.log("Controller actualizar noticia")
+			Logger.error("Controller actualizar noticia")
 			const { id } = req.params;
 			const noticia = req.body;
 			const noticiaActualizada = await this.apiNoticias.actualizarNoticia(id, noticia)
@@ -50,7 +50,7 @@ export default class ControladorNoticias {
 			})
 		}
 		catch(err){
-			console.log("Error actualizar Noticias", err);
+			Logger.error("Error actualizar Noticias");
 			next(err);
 		}
 	}
@@ -65,7 +65,7 @@ export default class ControladorNoticias {
 			})
 		}
 		catch(err){
-			console.log("Error borrar Noticias", err);
+			Logger.error("Error borrar Noticias");
 			next(err);
 		}
 	}

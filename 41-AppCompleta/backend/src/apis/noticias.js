@@ -1,8 +1,7 @@
 import Logger from '../services/logger';
 import Config from '../config';
 import NoticiasFactoryDAO from '../models/noticias/DAOS/factory';
-import { ApiError, ErrorStatus } from '../services/error';
-
+import Noticias from '../models/noticias'
 export default class ApiNoticias {
   constructor() {
     this.noticiasDAO = NoticiasFactoryDAO.get(Config.PERSISTENCIA);
@@ -30,6 +29,6 @@ export default class ApiNoticias {
   }
 
 	static validarNoticia(noticia) {
-    if(!noticia || !noticia.titulo || !noticia.descripcion) throw new ApiError('Noticia No Valida', ErrorStatus.BadRequest)
+    Noticias.validar(noticia)
 	}
 }

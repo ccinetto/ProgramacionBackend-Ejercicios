@@ -10,6 +10,10 @@ export default class NoticiasMongoDAO {
     {
       titulo: { type: String, required: true },
       descripcion: { type: String, required: true },
+      autor: { type: String, required: true },
+      email: { type: String, required: true },
+      imagen: { type: String, required: true },
+      vista: { type: Boolean, default: false },
       fyh: { type: String, default: new Date().toLocaleString() },
     },
     { versionKey: false }
@@ -36,7 +40,7 @@ export default class NoticiasMongoDAO {
 
     if (id) {
       const document = await this._noticias.findById(id);
-      if (document) return document;
+      if (document) return [document];
       else throw new ApiError('Documento no existe', ErrorStatus.NotFound);
     }
     output = await this._noticias.find();

@@ -12,10 +12,10 @@ export default class NoticiaFsDao {
 		if(!fileExists){
 			Logger.info('Archivo no existe, lo creamos');
 			this.noticias = [
-				{ _id: '1', titulo: 'Noticia1', descripcion: 'Descripcion Noticia 1', fyh: new Date().toLocaleString() },
-				{ _id: '2', titulo: 'Noticia2', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString() },
-				{ _id: '3', titulo: 'Noticia3', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString() },
-			]
+        { _id: '1', titulo: 'Noticia1', descripcion: 'Descripcion Noticia 1', fyh: new Date().toLocaleString(), email: 'ejemplo@gamil.com', autor: 'Juan Carlos', imagen: 'https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp' },
+        { _id: '2', titulo: 'Noticia2', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString(), email: 'ejemplo@gamil.com', autor: 'Juan Carlos', imagen: 'https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp' },
+        { _id: '3', titulo: 'Noticia3', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString(), email: 'ejemplo@gamil.com', autor: 'Juan Carlos', imagen: 'https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp' },
+      ];
 			this.guardar().then(() => Logger.info('Archivo inicializado'))
 		}
 	}
@@ -42,17 +42,16 @@ export default class NoticiaFsDao {
     return this.noticias.find((aProduct) => aProduct._id === id);
   }
 
-  async obtenerNoticias(id) {
+  async obtenerNoticias(id){
     await this.leer(this.nombreArchivo);
-
     if (id) {
-      const result = await this.find(id);
-      if (!result)
+      const index = this.findIndex(id);
+      if (index < 0)
         throw new ApiError('Documento no existe', ErrorStatus.NotFound);
 
-      return result
+      return this.noticias.filter(unaNoticia => unaNoticia._id === id);
     }
-    return this.noticias
+    return this.noticias;
   }
 
   async guardarNoticia(noticia) {

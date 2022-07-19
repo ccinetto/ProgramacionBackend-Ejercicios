@@ -1,6 +1,7 @@
 import express from 'express';
 import * as http from 'http';
 import path from 'path';
+import cors from 'cors';
 import Logger from './logger';
 import MainRouter from '../routes';
 
@@ -10,6 +11,7 @@ const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
 app.use(express.json());
+app.use(cors());
 
 const mainRouter = new MainRouter();
 

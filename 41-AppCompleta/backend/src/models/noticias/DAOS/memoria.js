@@ -3,9 +3,9 @@ import { ApiError, ErrorStatus } from '../../../services/error';
 export default class NoticiaMemDao {
   constructor() {
     this.noticias = [
-      { _id: '1', titulo: 'Noticia1', descripcion: 'Descripcion Noticia 1', fyh: new Date().toLocaleString() },
-      { _id: '2', titulo: 'Noticia2', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString() },
-      { _id: '3', titulo: 'Noticia3', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString() },
+      { _id: '1', titulo: 'Noticia1', descripcion: 'Descripcion Noticia 1', fyh: new Date().toLocaleString(), email: 'ejemplo@gamil.com', autor: 'Juan Carlos', imagen: 'https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp' },
+      { _id: '2', titulo: 'Noticia2', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString(), email: 'ejemplo@gamil.com', autor: 'Juan Carlos', imagen: 'https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp' },
+      { _id: '3', titulo: 'Noticia3', descripcion: 'Descripcion Noticia 2', fyh: new Date().toLocaleString(), email: 'ejemplo@gamil.com', autor: 'Juan Carlos', imagen: 'https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp' },
     ];
   }
 
@@ -23,7 +23,7 @@ export default class NoticiaMemDao {
       if (index < 0)
         throw new ApiError('Documento no existe', ErrorStatus.NotFound);
 
-      return this.noticias[index];
+      return this.noticias.filter(unaNoticia => unaNoticia._id === id);
     }
     return this.noticias;
   }

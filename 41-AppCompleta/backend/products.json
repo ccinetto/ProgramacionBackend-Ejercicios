@@ -3,12 +3,47 @@
 		"_id": "1",
 		"titulo": "Noticia1",
 		"descripcion": "Descripcion Noticia 1",
-		"fyh": "7/19/2022, 11:39:38 AM"
+		"fyh": "7/19/2022, 7:02:49 PM",
+		"email": "ejemplo@gamil.com",
+		"autor": "Juan Carlos",
+		"imagen": "https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp"
 	},
 	{
 		"_id": "2",
 		"titulo": "Noticia2",
 		"descripcion": "Descripcion Noticia 2",
-		"fyh": "7/19/2022, 11:39:38 AM"
+		"fyh": "7/19/2022, 7:02:49 PM",
+		"email": "ejemplo@gamil.com",
+		"autor": "Juan Carlos",
+		"imagen": "https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp"
+	},
+	{
+		"_id": "3",
+		"titulo": "Noticia3",
+		"descripcion": "Descripcion Noticia 2",
+		"fyh": "7/19/2022, 7:02:49 PM",
+		"email": "ejemplo@gamil.com",
+		"autor": "Juan Carlos",
+		"imagen": "https://media.tycsports.com/files/2022/04/12/414388/boca-memes_w416.webp"
+	},
+	{
+		"_id": "4",
+		"fyh": "7/19/2022, 7:02:58 PM",
+		"titulo": "The COM transmitter is down, generate the auxiliary monitor so we can generate the HTTP panel!",
+		"descripcion": "Nesciunt quo tempora et eos non optio. Voluptatibus et et fuga sed maxime eligendi ducimus. Accusamus perferendis quod quis non nostrum tenetur in ut.",
+		"autor": "Andrea Madera",
+		"imagen": "http://placeimg.com/1234/2345/cat?41924",
+		"email": "JulioCsar_Lerma@hotmail.com",
+		"vista": true
+	},
+	{
+		"_id": "5",
+		"fyh": "7/19/2022, 7:03:13 PM",
+		"titulo": "If we program the matrix, we can get to the TCP card through the online PCI sensor!",
+		"descripcion": "Nulla qui numquam voluptate. Eligendi eaque excepturi sunt. Sit magni non quisquam veritatis laboriosam voluptatem veniam. Facilis quasi nesciunt occaecati nesciunt dolorum odio maiores. Consequatur natus blanditiis excepturi dolores.",
+		"autor": "Ángel Aguilera",
+		"imagen": "http://placeimg.com/1234/2345/cat?31910",
+		"email": "Yolanda_Ziga@gmail.com",
+		"vista": true
 	}
 ]

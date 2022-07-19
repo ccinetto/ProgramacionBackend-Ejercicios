@@ -39,7 +39,7 @@ export default class ControladorNoticias {
 
 	actualizarNoticia = async (req, res, next) => {
 		try{
-			Logger.error("Controller actualizar noticia")
+			Logger.info("Controller actualizar noticia")
 			const { id } = req.params;
 			const noticia = req.body;
 			const noticiaActualizada = await this.apiNoticias.actualizarNoticia(id, noticia)

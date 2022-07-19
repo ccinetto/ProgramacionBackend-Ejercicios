@@ -16,5 +16,5 @@ export default {
   MONGO_ATLAS_SRV: process.env.MONGO_ATLAS_SRV || 'mongosrv',
   MONGO_LOCAL_SRV: process.env.MONGO_LOCAL_SRV || 'mongoLocalsrv',
   MONGO_ATLAS_DB: process.env.MONGO_ATLAS_DB || 'db',
-  PERSISTENCIA: PersistenceType.FileSystem,
+  PERSISTENCIA: PersistenceType.MongoAtlas,
 };

@@ -1,0 +1,14 @@
+[
+	{
+		"_id": "1",
+		"titulo": "Noticia1",
+		"descripcion": "Descripcion Noticia 1",
+		"fyh": "7/19/2022, 11:39:38 AM"
+	},
+	{
+		"_id": "2",
+		"titulo": "Noticia2",
+		"descripcion": "Descripcion Noticia 2",
+		"fyh": "7/19/2022, 11:39:38 AM"
+	}
+]

@@ -10,7 +10,6 @@
     "test:all": "mocha -r @babel/register -r regenerator-runtime/runtime src/tests --recursive",
     "test:a": "mocha -r @babel/register -r regenerator-runtime/runtime src/tests/primer-grupo.test.js",
     "test:b": "mocha -r @babel/register -r regenerator-runtime/runtime src/tests/segundo-grupo.test.js"
-
   },
   "keywords": [],
   "author": "",
@@ -24,5 +23,8 @@
     "mocha": "^10.0.0",
     "nodemon": "^2.0.12",
     "regenerator-runtime": "^0.13.9"
+  },
+  "dependencies": {
+    "chai": "^4.3.6"
   }
 }

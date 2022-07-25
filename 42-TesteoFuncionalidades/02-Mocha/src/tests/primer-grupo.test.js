@@ -1,9 +1,17 @@
 import { Tareas } from '../utils/tareas';
-import { strict as assert } from 'assert';
+// import { strict as assert } from 'assert';
+import Chai from 'chai';
+
+const { expect, assert} = Chai;
+const should = Chai.should();
 
 describe('test de integración de tareas', function () {
   it('debería crear el contenedor de tareas vacío', function () {
     const tareas = new Tareas();
+
+    expect(tareas.list()).to.have.lengthOf(0);      //hecho con CHAI ASSERT
+    assert.lengthOf(tareas.list(), 0);              //hecho con CHAI ASSERT
+    tareas.list().should.have.lengthOf(0);          //hecho con CHAI SHOULD
     assert.strictEqual(tareas.list().length, 0);
   });
 
@@ -41,27 +49,27 @@ describe('test de integración de tareas', function () {
 describe('comprobar error en completar tarea inexistente', function () {
   it('deberia dar error cuando no hay tareas cargadas', function () {
     const tareas = new Tareas();
-
-    const errorEsperado = new Error('No hay tareas');
+    const errorEsperado = 'No hay tareas';
 
     const funcionDisparadora = () => {
       tareas.complete('Una Tarea mas');
     };
 
-    assert.throws(funcionDisparadora, errorEsperado);
-
-    //   assert.throws(() => {
-    //       Tareas.complete('una tareas más')
-    //   },errorEsperado)
+    assert.throws(funcionDisparadora, Error, errorEsperado);
+    expect(funcionDisparadora).to.throw(Error, errorEsperado);
   });
 
   it('deberia dar error cuando la tarea a completar no existe', function () {
     const tareas = new Tareas();
     tareas.add('run code');
 
-    const errorEsperado = new Error('Tarea no encontrada');
-    assert.throws(() => {
+    const errorEsperado = 'Tarea no encontrada';
+
+    const funcionDisparadora = () => {
       tareas.complete('una tareas más');
-    }, errorEsperado);
+    }
+
+    assert.throws(funcionDisparadora, Error, errorEsperado);
+    expect(funcionDisparadora).to.throw(Error, errorEsperado);
   });
 });

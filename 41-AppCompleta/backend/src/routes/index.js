@@ -4,7 +4,7 @@ import NoticiasRouter from './noticias';
 export default class MainRouter {
 	constructor() {}
 
-	start() {
+	static start() {
 		const router = Router();
 		const noticiasRouter = new NoticiasRouter();
 

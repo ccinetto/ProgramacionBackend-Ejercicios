@@ -17,7 +17,7 @@ const logConfiguration = {
 
 const logger = createLogger(logConfiguration);
 
-if (Config.NODE_ENV !== 'development') {
+if (Config.NODE_ENV === 'production') {
   logger.add(
     new File({
       filename: './logs/errors.log',

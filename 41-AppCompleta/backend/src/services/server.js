@@ -11,11 +11,22 @@ const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
 app.use(express.json());
-app.use(cors());
 
-const mainRouter = new MainRouter();
+const whiteList = ['https://www.google.com.ar', 'http://localhost:3000', 'https://www.clarin.com'];
 
-app.use('/api', mainRouter.start());
+const validateCors = (req, callback) => {
+  const origin = req.header('Origin');
+
+  if(whiteList.indexOf(origin) < 0 )  return callback(null, {origin: false});
+
+  if(origin === whiteList[0] && req.method === 'GET') return callback(null, {origin: false});
+
+  return callback(null, {origin: true});
+}
+
+app.use(cors(validateCors));
+
+app.use('/api', MainRouter.start());
 
 app.use((req, res) => {
   res.status(404).json({

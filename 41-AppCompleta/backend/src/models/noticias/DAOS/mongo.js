@@ -4,8 +4,6 @@ import Config from '../../../config';
 import { ApiError, ErrorStatus } from '../../../services/error';
 
 export default class NoticiasMongoDAO {
-  static _connected = false;
-  _client;
   _schema = new mongoose.Schema(
     {
       titulo: { type: String, required: true },
@@ -20,19 +18,8 @@ export default class NoticiasMongoDAO {
   );
   _noticias = mongoose.model('noticias', this._schema);
 
-  constructor(local = false) {
+  constructor() {
     Logger.info('Inicializamos DAO Noticias Mongo');
-
-    if (!NoticiasMongoDAO._connected) {
-      Logger.info(
-        'Conexion MongoDB no establecida. Creamos conexion a mongoDB'
-      );
-      NoticiasMongoDAO._connected = true;
-      const srv = local ? Config.MONGO_LOCAL_SRV : Config.MONGO_ATLAS_SRV;
-      mongoose.connect(srv, {}).then((connection) => {
-        this._client = connection;
-      });
-    }
   }
 
   async obtenerNoticias(id) {

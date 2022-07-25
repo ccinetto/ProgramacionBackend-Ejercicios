@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "transpile": "babel src --out-dir dist",
+    "build": "babel src --out-dir dist",
     "start": "node ./dist/index.js",
+    "dev:fs": "nodemon --exec babel-node ./src/index.js --persistencia=FS",
+    "dev:mongo": "nodemon --exec babel-node ./src/index.js --persistencia=MONGO",
     "dev": "nodemon --exec babel-node ./src/index.js"
   },
   "keywords": [],
@@ -23,6 +25,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "joi": "^17.6.0",
+    "minimist": "^1.2.6",
     "mongoose": "^6.4.5",
     "winston": "^3.8.1"
   }

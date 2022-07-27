@@ -19,7 +19,7 @@ describe('comprobando que saveToFileCb() funcione bien', function () {
     todos.add(contenido);
 
     const callback = (err) => {
-      assert.strictEqual(err, null); //Verifico que el error sea nulo cuando llamo a la callback.
+      assert.toEqual(err, null); //Verifico que el error sea nulo cuando llamo a la callback.
       assert.strictEqual(fs.existsSync(todosFilePath), true); //Verifico que se haya creado el archivo correctamente
       let content = JSON.parse(fs.readFileSync(todosFilePath, 'utf-8'));
 

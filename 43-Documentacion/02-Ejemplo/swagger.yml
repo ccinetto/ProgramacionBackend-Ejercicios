@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Titulo de nuestro proyecto Backend
+  description: Esta API es un ejemplo de la clase 43 de Coderhouse donde vamos a ver como se documenta con swagger
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+    description: Local server
+  - url: https://mi-url-de-heroku.com/api
+    description: Production server
+
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - id
+        - nombre
+        - precio
+        - stock
+      properties:
+        id:
+          type: string
+          description: identificador unico de cada producto
+        nombre:
+          type: string
+          description: nombre del producto
+        precio:
+          type: number
+          description: precio del producto en pesos argentinos
+        stock:
+          type: number
+          description: unidades en stock del producto
+      example:
+        id: 4ughd73658fnsk85dh58sk
+        nombre: desktop computer
+        precio: 123.78
+        stock: 25
+
+paths:
+  /products:
+    get:
+      summary: Gets every product available
+      tags:
+        - Productos
+      responses:
+        '200':
+          description: Every product available.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'

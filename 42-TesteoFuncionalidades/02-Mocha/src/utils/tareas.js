@@ -1,6 +1,5 @@
 import fs, { NoParamCallback } from 'fs';
-
-
+import path from 'path';
 export class Tareas {
   tareas;
 

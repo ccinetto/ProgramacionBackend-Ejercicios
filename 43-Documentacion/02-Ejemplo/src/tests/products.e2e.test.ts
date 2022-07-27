@@ -2,13 +2,16 @@ import supertest from 'supertest';
 import ProductDao from '../models/products/products.dao';
 import { ProductModel } from '../models/products/products.schema';
 import Server from '../services/server';
+import MongoDBClient from '../services/dbMongo';
 
 describe('Test E2E de Productos', () => {
   let request: supertest.SuperTest<supertest.Test>;
   let daoTest: ProductDao;
+  let mongoDBClient: MongoDBClient;
 
   beforeAll(async () => {
     request = supertest(Server);
+    mongoDBClient = await MongoDBClient.connect()
     daoTest = await ProductDao.getInstance();
     await ProductModel.deleteMany();
   });
@@ -19,7 +22,7 @@ describe('Test E2E de Productos', () => {
   });
 
   afterAll(async () => {
-    await daoTest.disconnect();
+    await mongoDBClient.disconnect();
     Server.close();
   });
 
@@ -37,7 +40,7 @@ describe('Test E2E de Productos', () => {
       data: 'objeto no encontrado',
     };
 
-    const response = await request.get('/api/products/1234');
+    const response = await request.get('/api/products/62df43581af04e56b1682fe4');
 
     expect(response.status).toEqual(404);
     expect(response.body).toEqual(expectedResponse);

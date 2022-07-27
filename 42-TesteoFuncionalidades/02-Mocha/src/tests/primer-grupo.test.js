@@ -1,5 +1,4 @@
 import { Tareas } from '../utils/tareas';
-// import { strict as assert } from 'assert';
 import Chai from 'chai';
 
 const { expect, assert} = Chai;
@@ -7,11 +6,19 @@ const should = Chai.should();
 
 describe('test de integración de tareas', function () {
   it('debería crear el contenedor de tareas vacío', function () {
+    //Etapa Preparacion
+
+    //Etapa Ejecucion
     const tareas = new Tareas();
 
-    expect(tareas.list()).to.have.lengthOf(0);      //hecho con CHAI ASSERT
-    assert.lengthOf(tareas.list(), 0);              //hecho con CHAI ASSERT
+    //Etapa Afirmaciones
+    const listadoTareas = tareas.list()
+
+    expect(listadoTareas).to.have.lengthOf(0);      //hecho con CHAI EXPECT
+    assert.lengthOf(listadoTareas, 0);              //hecho con CHAI ASSERT
     tareas.list().should.have.lengthOf(0);          //hecho con CHAI SHOULD
+
+
     assert.strictEqual(tareas.list().length, 0);
   });
 

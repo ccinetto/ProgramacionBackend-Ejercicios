@@ -32,7 +32,7 @@ components:
           type: number
           description: unidades en stock del producto
       example:
-        id: 4ughd73658fnsk85dh58sk
+        id: 62df43581af04e56b1682fe4
         nombre: desktop computer
         precio: 123.78
         stock: 25
@@ -52,3 +52,22 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Product'
+  /products/{productId}:
+    get:
+      summary: Returns a user by ID.
+      tags:
+        - Productos
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID Del producto que queremos.
+          schema:
+            type : string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'

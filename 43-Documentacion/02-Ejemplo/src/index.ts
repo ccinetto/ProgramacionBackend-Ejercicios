@@ -5,7 +5,7 @@ import { Logger } from './services/logger';
 
 const init = async () => {
   const connection = await MongoDBClient.connect();
-  Server.listen(Config.PORT, () => console.log(`Server UP on ${Config.PORT}`));
+  Server.listen(Config.PORT, () => Logger.info(`Server UP on ${Config.PORT}`));
 
   process.on('exit', async () => {
     Logger.info('Closing Backend Server. GoodBye!')

@@ -20,7 +20,7 @@ const getCourses = (query = {}) => {
   }
 
   if (query.topic)
-    return coursesData.filter((course) => course.topic === topic);
+    return coursesData.filter((course) => course.topic === query.topic);
 
   return coursesData;
 };

@@ -1,6 +1,8 @@
 import { CourseApi } from '../apis/course';
 
 export const getCourseById = (args) => {
+  console.log(args);
+
   const query = {
     id: args.id,
   };
@@ -8,20 +10,24 @@ export const getCourseById = (args) => {
   return CourseApi.getCourses(query);
 };
 
-export const getAllCoursesByTopic = ({ topic }) => {
+export const getAllCoursesByTopic = (args) => {
+  console.log(args);
+  const { topic } = args;
+
   const query = {};
   if (topic) {
     query.topic = topic;
   }
 
-  return CourseApi.getCourses(query);
+  return CourseApi.getCourses(args);
 };
 
 export const getAllCourses = () => {
-  return coursesData;
+  return CourseApi.getCourses();
 };
 
 export const updateCourseTopic = ({ id, topic }) => {
+  console.log('ENTRE A updateCourseTopic')
   const data = {
     topic,
   };
@@ -38,4 +44,5 @@ export const createCourse = ({ data }) => {
 
 export const deleteCourse = ({ id }) => {
   CourseApi.deleteCourse(id);
+  return true;
 };

@@ -23,9 +23,9 @@ export const graphqlSchema = buildSchema(`
         getAllCoursesByTopic(topic: String!): [Course]
     },
     type Mutation {
-        updateCourseTopic(id: Int!, topic: String!): Course
+        updatecourseTopic(id: Int!, topic: String!): Course
         createCourse(data: CourseInput!): Course
-        deleteCourse(id: Int!): Course
+        deleteCourse(id: Int!): Boolean
     },
     type Course {
         id: Int
@@ -46,9 +46,9 @@ export const graphqlSchema = buildSchema(`
 
 // Root resolver
 export const graphqlRoot = {
-  getMessage,
-  getArrayOfMessages,
-  getNumber,
+  getMessage: getMessage,
+  getArrayOfMessages : getArrayOfMessages,
+  getNumber : getNumber,
   getArrayOfNumbers,
   getCourseById,
   getAllCoursesByTopic,

@@ -33,7 +33,7 @@ const TaskSchema = new mongoose.Schema<TaskType>(
 );
 
 //Defino mi modelo para trabajar con mi recurso usando mongoose
-export const TaskModel = mongoose.model<TaskType>('task', TaskSchema);
+export const TaskModel = mongoose.model('task', TaskSchema);
 
 //transformo mi modelo para poder trabajarlo con GraphQL
 export const TaskGraphQlModel = composeWithMongoose(TaskModel);

@@ -1,3 +1,4 @@
+import libros from '../../../../../../46-FrameworksParte2/02-Koa/src/routes/libros';
 import { ApiError, ErrorStatus } from '../../../services/error';
 
 export default class NoticiaMemDao {
@@ -51,7 +52,7 @@ export default class NoticiaMemDao {
   }
 
   async borrarNoticia(id){
-    const index = this.findIndex(id);
-    this.noticias.splice(index, 1);
+    const index = findIndex(id);
+    libros.splice(index, 1);
   }
 }

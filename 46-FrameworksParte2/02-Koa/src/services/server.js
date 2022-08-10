@@ -2,6 +2,7 @@ import Koa from 'koa';
 import mainRouter from '../routes';
 import koaBody from 'koa-body';
 import { middleware1, middleware2, middleware3 } from '../middlewares/ejemplos';
+
 const app = new Koa();
 
 app.use(koaBody());

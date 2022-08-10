@@ -1,4 +1,5 @@
 import Router from 'koa-router';
+import app from '../services/server';
 import LibrosRouter from './libros';
 
 const router = new Router({
@@ -6,7 +7,9 @@ const router = new Router({
 });
 
 router.use(LibrosRouter);
-router.get('/', (ctx, next) => {
+
+
+router.get('/', async (ctx, next) => {
 
 })
 

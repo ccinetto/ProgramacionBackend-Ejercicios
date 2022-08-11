@@ -17,14 +17,14 @@ const minimo = numeros[0];
 //Obtenemos el maximo (al estar ordenamos sabemos que es el ultimo del array)
 const maximo = numeros[numeros.length - 1];
 
-const promedio = (data) => {
+const promedio = (data: number[]) => {
   let suma = 0;
   data.forEach((num) => (suma += num));
   return suma / numeros.length;
 };
 
 //armamos nuestro string con un array de strings donde cada elemento va a ser una fila
-let textos: string[] = [];
+const textos: string[] = [];
 textos.push('******************************************');
 textos.push(`Números: ${numeros}`);
 textos.push(`Mínimo: ${minimo}`);

@@ -9,4 +9,4 @@ const sayHelloTo = (name: string): string => {
   return `Hello ${name} !`;
 };
 
-console.log(sayHelloTo('Coderhouse!'));
+console.log(sayHelloTo('BOKITA!'));

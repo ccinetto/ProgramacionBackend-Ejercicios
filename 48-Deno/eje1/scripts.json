@@ -1,0 +1,9 @@
+{
+  "$schema": "https://deno.land/x/denon@2.5.0/schema.json",
+  "scripts": {
+    "start": {
+      "cmd": "deno run --allow-net --allow-read index.ts",
+      "desc": "run my index.ts file"
+    }
+  }
+}

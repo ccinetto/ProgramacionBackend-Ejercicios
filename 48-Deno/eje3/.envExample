@@ -1,0 +1,5 @@
+PORT=8080
+MONGO_PRIMARY_CLUSTER=cluster0-shard-xx-xx.xxxxx.mongodb.net
+MONGO_PSW=xxxxxxxxxxxxxx
+MONGO_USERNAME=xxxxxx
+MONGO_DBNAME=xxxx

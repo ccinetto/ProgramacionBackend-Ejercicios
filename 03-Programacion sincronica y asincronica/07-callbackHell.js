@@ -1,47 +1,18 @@
-const fs = require('fs');
+const hacerTarea = (num, cb) => {
+  console.log(new Date(), 'Haciendo Tarea', num);
+  setTimeout(() => {
+      console.log(new Date(), 'Tarea', num, 'finalizada');
+      cb();
+  }, 1000);
+}
 
 
-// 1) Leermos el directorio actual donde estamos con la funcion readdir
-// 2) Si encontramos dentro del directorio el archivo texto.txt lo leemos con la funcion readFile
-// 3) Luego de leerlo, tomamos su data y la actualizamos con la funcion appendFile
-fs.readdir(__dirname, (err, data) => {
-  if (err) {
-    console.log('Hubo un error para leer el directorio');
-    console.log(err.message);
-    return;
-  }
-  console.log(`\nARCHIVOS EXISTENTES =>`);
-  console.log(data);
-  if (data.includes('texto.txt')) {
-    console.log('El archivo existe, vamos a leerlo');
-    fs.readFile('texto.txt', (err, data) => {
-      if (err) {
-        console.log('Hubo un error para leer el archivo');
-        console.log(err.message);
-        return;
-      }
-
-      console.log(`\nDATA del archivo leido (Buffer) =>`);
-      console.log(data);
-      const info = data.toString();
-      console.log(`\nDATA del archivo leido (String) =>`);
-      console.log(info);
-
-      console.log(`\nVamos a Actualizar el archivo`);
-
-      fs.appendFile('texto.txt', 'HOLA\n', 'utf8', (err, data) => {
-        if (err) {
-          console.log('Hubo un error para escribir el archivo');
-          console.log(err.message);
-          return;
-        }
-
-        console.log(`\Archivo Actualizado. Fin del codigo`);
-      });
-    });
-  } else {
-    console.log('No existe el archivo. termino el codigo');
-  }
-});
-
-console.log('EJECUTANDO LINEA 24');
+hacerTarea(1, () => {
+  console.log("Finalice la primer tarea secuencial");
+  hacerTarea(2, () => {
+    "Finalice la segunda tarea secuencial";
+    hacerTarea(3, () => {
+      "Finalice la tercer tarea secuencial";
+    })
+  })
+})

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const data = `esto es el texto que quiero escribir en mi archivo\n`;
+const data = `Gol de boca\n`;
 const pathNuevoArchivo = './01-output';
 
 //Escritura sincronica
@@ -10,9 +10,12 @@ try {
   console.log('Error Escritura Sincronica', err);
 }
 
-//Escritura Asincronica
+// //Escritura Asincronica
 
-fs.writeFile(pathNuevoArchivo, data, (err, salida) => {
-  if (err) console.log('Error Escritura Asincronica', err.message);
-  console.log('DONE');
-});
+// fs.writeFile(pathNuevoArchivo, data, (err, salida) => {
+//   if (err) {
+//     console.log('Error Escritura Asincronica', err.message);
+//     throw new Error(err);
+//   }
+//   console.log('DONE');
+// });

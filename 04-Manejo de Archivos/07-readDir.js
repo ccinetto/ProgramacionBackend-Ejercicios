@@ -17,3 +17,6 @@ fs.readdir(path, (err, salida) => {
   console.log(salida);
   console.log('DONE');
 });
+
+
+

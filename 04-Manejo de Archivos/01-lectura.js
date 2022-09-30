@@ -16,14 +16,14 @@ const pathArchivo4 = path.resolve(__dirname, './../03-Programacion sincronica y 
 
 const ubicacionArchivo = pathArchivoOpcion2
 
-// //Lectura sincronica
-// try {
-//   const data = fs.readFileSync(ubicacionArchivo, 'utf-8');
-//   console.log(data);
-// } catch (err) {
-//   console.log('Error lectura Sincronica');
-//   console.log(err.message)
-// }
+//Lectura sincronica
+try {
+  const data = fs.readFileSync(ubicacionArchivo, 'utf-8');
+  console.log(data);
+} catch (err) {
+  console.log('Error lectura Sincronica');
+  console.log(err.message)
+}
 
 //Lectura asincronica
 

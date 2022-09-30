@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const data = `esto es el texto que quiero escribir en mi archivo\n`;
+const data = `Gol De Boca`;
 const pathNuevoArchivo = './01-output';
 
 //APPEND sincronica

@@ -37,21 +37,24 @@ server.on('error', (err) => {
  */
 
 app.get('/productos', (req, res) => {
-  /**Opcionalmente podemos agregar queries para hacer busquedas distintas y no traer todo*/
-  const filtroPrecio = req.query.price;
-  let data;
-
-  console.log(filtroPrecio);
-
-  if (filtroPrecio)
-    data = productos.filter(
-      (aProduct) => aProduct.precio >= Number(filtroPrecio)
-    );
-  else data = productos;
-
   res.json({
-    data,
-  });
+    data: productos
+  })
+  // /**Opcionalmente podemos agregar queries para hacer busquedas distintas y no traer todo*/
+  // const filtroPrecio = req.query.price;
+  // let data;
+
+  // console.log(filtroPrecio);
+
+  // if (filtroPrecio)
+  //   data = productos.filter(
+  //     (aProduct) => aProduct.precio >= Number(filtroPrecio)
+  //   );
+  // else data = productos;
+
+  // res.json({
+  //   data,
+  // });
 });
 
 /**

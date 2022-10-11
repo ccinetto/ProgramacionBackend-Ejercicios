@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"nombre": "Martin Palermo",
+		"edad": 40,
+		"goles": 400
+	},
+	{
+		"id": 2,
+		"nombre": "Carlos Tevez",
+		"edad": 36,
+		"goles": 100
+	},
+	{
+		"id": 3,
+		"nombre": "Soldano",
+		"edad": 30,
+		"goles": 15000
+	}
+]

@@ -15,7 +15,7 @@ const server = app.listen(puerto, () =>
 
 /**Upload.single se usa para subir 1 solo archivo */
 /**Recibe como parametro el nombre del param de la request */
-app.post('/single', upload.single('imagen'), (req, res) => {
+app.post('/profile', upload.single('imagen'), (req, res) => {
   try {
     console.log(req.file);
     res.send(req.file);
@@ -44,8 +44,8 @@ const storage = multer.diskStorage({
 
     cb(null, folderName);
   },
-  filename: function (req, file, cb) {
-    cb(null, `${Date.now()}-${file.originalname}`);
+  filename: function (req, file, next) {
+    next(null, `${Date.now()}-${file.originalname}`);
   },
 });
 

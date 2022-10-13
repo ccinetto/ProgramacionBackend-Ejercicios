@@ -31,6 +31,12 @@ router.get('/:pos', (req, res) => {
 router.post('/', (req, res) => {
   const body = req.body;
 
+  if(!body.nuevaPalabra) {
+    return res.status(400).json({
+      msg: "Mandame una palabra :("
+    })
+  };
+
   frase += ' ' + body.nuevaPalabra;
   res.json({
     frase,

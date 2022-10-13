@@ -9,13 +9,15 @@ let mascotas = [];
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  //validar que el usuario este logueado
   res.json({
     mascotas,
   });
 });
 
 router.post('/', (req, res) => {
-  const body = req.body;
+    //validar que el usuario este logueado
+const body = req.body;
 
   const nuevaMascota = {
     id: uuidv4(),

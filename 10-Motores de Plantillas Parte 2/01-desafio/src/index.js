@@ -8,8 +8,7 @@ const server = app.listen(puerto, () =>
   console.log('Server up en puerto', puerto)
 );
 
-const publicPath = path.resolve(__dirname, '../public');
-app.use(express.static(publicPath));
+app.use(express.static('public'));
 
 app.set('view engine', 'pug');
 const viewsPath = path.resolve(__dirname, '../views');

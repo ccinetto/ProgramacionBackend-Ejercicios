@@ -2,7 +2,10 @@ const { v4: uuidv4 } = require('uuid');
 
 class Personas {
   constructor() {
-    this.personas = [];
+    this.personas = [
+      { id: uuidv4(), nombre: 'Martin', apellido: "Palermo", edad: 22 },
+      { id: uuidv4(), nombre: 'Juan Roman', apellido: "Riquelme", edad: 30 }
+    ];
   }
 
   getAll() {

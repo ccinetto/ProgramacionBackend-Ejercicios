@@ -3,7 +3,7 @@ const personasController = require('../controller/personas');
 
 const router = express.Router();
 
-router.post('/guardar', (req, res) => {
+router.post('/', (req, res) => {
   const body = req.body;
 
   const nuevaPersona = {

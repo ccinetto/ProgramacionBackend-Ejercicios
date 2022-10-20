@@ -1,18 +1,18 @@
-html 
-  head 
+html
+  head
     title ejemplo3
-    link(rel="stylesheet" href="style.css")
+    link(rel="stylesheet" href="./css/style.css")
   body
     div
-      h1 lista super 
+      h1 lista super
       ol
-        each val in miarraydeInfo
-          li(class="toplaner")=val 
+        each aValue in miarraydeInfo
+          li(class="toplaner")=aValue
       if mostrarLista2
         ul
           each aValue in listaObjetos
             li(class= aValue.style)= aValue.name
         p Info iteraciones => https://pugjs.org/language/iteration.html
         p Info Condicionales => https://www.nodejsera.com/library/pug/pug-conditionals.html
-      else 
+      else
         p='no te muestro nada'

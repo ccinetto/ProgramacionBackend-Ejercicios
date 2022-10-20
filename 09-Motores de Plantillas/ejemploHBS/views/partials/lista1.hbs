@@ -1,0 +1,17 @@
+<h1 class="toplaner">LISTA MERCADO DE {{persona.nombre}} {{persona.apellido}}</h1>
+
+{{#if mostrarProductos}}
+<ul>
+
+	{{#each productos }}
+		<li class={{this.estilo}}> {{this.name}} </li>
+	{{/each}}
+
+</ul>
+{{else if mostrar}}
+<p>Entre al else if</p>
+{{else}}
+<p>No te muestro nada</p>
+
+{{/if}}
+

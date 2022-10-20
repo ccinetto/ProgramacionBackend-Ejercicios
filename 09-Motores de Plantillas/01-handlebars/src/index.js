@@ -14,8 +14,7 @@ server.on('error', (err) => {
 });
 
 //Disponibilizamos la carpeta public para archivos estaticos
-const publicPath = path.resolve(__dirname, '../public');
-app.use(express.static(publicPath));
+app.use(express.static('public'));
 
 //Conseguimos el path absoluto de la carpeta layouts
 const layoutDirPath = path.resolve(__dirname, '../views/layouts');
@@ -64,8 +63,8 @@ const dinamicData = {
       },
     ],
   };
-  
+
   app.get('/', (req, res) => {
     res.render('main', dinamicData);
   });
-  
+

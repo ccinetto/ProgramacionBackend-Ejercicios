@@ -22,23 +22,31 @@ const initWsServer = (server) => {
 
     //New User Joined room
     //https://socket.io/docs/v3/rooms/
-    socket.on('JoinRoom', (msg) => {
-      addUser(socket.client.id, msg.username, msg.room);
-      const user = getCurrentUser(socket.client.id);
+    socket.on('JoinRoom', async (msg) => {
+      // Agregamos el usuario a nuestra """""DB"""""
+      await addUser(socket.client.id, msg.username, msg.room);
+      const user = await getCurrentUser(socket.client.id);
 
-      socket.join(user.room);
+      // Agrego al usuario a la sala correspondiente
+      socket.join(user.room);  //meto a este socket en particular a la sala
 
-      //Send a message to the newUser
-      data.username = 'CHATBOT-BOTI';
-      data.text = 'Welcome to the chat!';
-      socket.emit('message', formatMessages(data));
+      //mandamos mensaje de bienvenida al usuario que se conecto
+      //mensaje privado entre server y el cliente
+      socket.emit('message', formatMessages({
+        username: 'CHATBOT-BOTI',
+        text: 'Welcome to the chat!'
+      }));
 
+      //le aviso a los demas integrantes de la sala que se unio un nuevo usuario
+      //mensaje entre el server y todos los integrantes de la sala salvo el usuario que envio el mensaje
+      //se usa broadcast y el to(nombreSala)
       data.text = `${user.username} has joined the chat!`;
 
       //BroadCast when a user connects
       socket.broadcast.to(user.room).emit('message', formatMessages(data));
 
-      //Send Room info
+      //Mando a todos info actualizada de quienes estan en la sala
+      //Mensaje del server a todos los usuarios de la sala
       const roomInfo = {
         room: user.room,
         users: getRoomUsers(user.room),

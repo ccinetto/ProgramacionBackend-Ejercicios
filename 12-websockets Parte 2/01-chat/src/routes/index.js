@@ -15,10 +15,11 @@ router.get('/saludar', (req, res) => {
     username: 'CHATBOT-BOTI',
     text: message,
   };
+  //envio notificacion por ws a todos
   const wsServer = getWsServer();
   console.log(wsServer);
   wsServer.emit('message', formatMessages(data));
-  res.json({ msg: 'OK' });
+  res.json({ msg: 'OK' });  //hasta ac es el endpoint normal
 });
 
 module.exports = router;

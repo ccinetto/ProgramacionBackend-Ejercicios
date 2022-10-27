@@ -10,6 +10,8 @@ const addUser = (id, username, room) => {
   };
 
   users.push(user);
+  console.log('CLIENTES ACTIVOS');
+  console.log(users)
 };
 
 const removeUser = (id) => {

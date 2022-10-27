@@ -9,7 +9,6 @@ app.use(express.static('public'));
 app.get('/api', (req, res) => {
 	res.json({
 		msg: 'ok',
-		pepe,
 	})
 });
 

@@ -5,7 +5,7 @@ const {
   getCurrentUser,
   removeUser,
   getRoomUsers,
-} = require('../utils/users');
+} = require('../controllers/users');
 
 const data = {
   username: undefined,
@@ -21,6 +21,7 @@ const initWsServer = (server) => {
     console.log('Nueva Conexion establecida!');
 
     //New User Joined room
+    //https://socket.io/docs/v3/rooms/
     socket.on('JoinRoom', (msg) => {
       addUser(socket.client.id, msg.username, msg.room);
       const user = getCurrentUser(socket.client.id);
